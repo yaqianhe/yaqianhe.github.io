@@ -1,537 +1,326 @@
-
-
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Publications — Yaqian He</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --forest: #1a3d2b; --forest-mid: #2e6044; --moss: #4a7c59; --sage: #7aab8a;
+    --cream: #f7f4ef; --warm-white: #fdfcfa; --ink: #1c1c1a; --ink-mid: #3d3d38;
+    --ink-light: #6b6b64; --rule: #d9d5cc; --accent: #c87941; --accent-light: #f0e8dd;
+  }
+  html { font-size: 16px; scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--warm-white); color: var(--ink); line-height: 1.6; }
+  nav { position: sticky; top: 0; z-index: 100; background: var(--warm-white); border-bottom: 1px solid var(--rule); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px; }
+  .nav-brand { font-family: 'EB Garamond', serif; font-size: 1.1rem; color: var(--forest); text-decoration: none; }
+  .nav-links { display: flex; list-style: none; }
+  .nav-links a { display: block; padding: 0.35rem 0.85rem; font-size: 0.82rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink-mid); text-decoration: none; border-radius: 4px; transition: color 0.15s, background 0.15s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--forest); background: var(--accent-light); }
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 2.4.0">
-  <meta name="generator" content="Hugo 0.49" />
-  <meta name="author" content="Yaqian He">
+  .page-header { max-width: 960px; margin: 0 auto; padding: 3.5rem 2rem 2.5rem; border-bottom: 1px solid var(--rule); display: flex; align-items: flex-end; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+  .page-eyebrow { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--moss); margin-bottom: 0.5rem; }
+  .page-title { font-family: 'EB Garamond', serif; font-size: 2.6rem; font-weight: 400; color: var(--forest); }
+  .pub-count { font-size: 0.85rem; color: var(--ink-light); white-space: nowrap; }
+  .pub-count strong { color: var(--forest); font-size: 1.4rem; font-family: 'EB Garamond', serif; display: block; }
 
-  
-  
-  
-  
-    
-  
-  <meta name="description" content="Assistant Professor, Geography">
+  .section { max-width: 960px; margin: 0 auto; padding: 2.5rem 2rem; }
+  .section + .section { border-top: 1px solid var(--rule); }
+  .section-title { font-family: 'EB Garamond', serif; font-size: 1.4rem; font-weight: 400; color: var(--forest); margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--rule); }
 
-  
-  <link rel="alternate" hreflang="en-us" href="https://yaqianhe.github.io/">
+  .pub-list { list-style: none; }
+  .pub-item { display: grid; grid-template-columns: 40px 1fr; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--rule); align-items: baseline; }
+  .pub-item:last-child { border-bottom: none; }
+  .pub-num { font-family: 'EB Garamond', serif; font-size: 1rem; color: var(--ink-light); text-align: right; padding-top: 0.1rem; }
+  .pub-body { font-size: 0.88rem; color: var(--ink-mid); line-height: 1.65; }
+  .pub-body em { font-style: italic; color: var(--ink); }
+  .pub-body strong { font-weight: 500; color: var(--ink); }
+  .pub-link { display: inline-block; margin-top: 0.3rem; font-size: 0.78rem; color: var(--moss); text-decoration: none; border-bottom: 1px solid var(--sage); transition: color 0.1s; }
+  .pub-link:hover { color: var(--forest); }
+  .pub-tag { display: inline-block; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.1rem 0.45rem; border-radius: 2px; margin-left: 0.4rem; vertical-align: middle; }
+  .tag-book { background: var(--accent-light); color: var(--accent); }
+  .tag-chapter { background: #e8edf7; color: #3a538a; }
+  .note-student { font-size: 0.72rem; color: var(--ink-light); font-style: italic; margin-bottom: 0.75rem; }
 
-  
-
-
-  
-
-  
-
-  
-
-  
-  
-  
-  <meta name="theme-color" content="#EF525B">
-  
-
-  
-  
-  
-  
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
-
-    
-    
-    
-    
-      
-      
-        
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" crossorigin="anonymous">
-        
-      
-    
-
-    
-
-    
-
-  
-
-  
-  
-  <link rel="stylesheet" href=//fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono>
-  
-
-  <link rel="stylesheet" href="/styles.css">
-  
-
-  
-  
-    <script>
-      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-      ga('create', 'UA-132320758-1', 'auto');
-      
-      ga('require', 'eventTracker');
-      ga('require', 'outboundLinkTracker');
-      ga('require', 'urlChangeTracker');
-      ga('send', 'pageview');
-    </script>
-    <script async src="//www.google-analytics.com/analytics.js"></script>
-    
-    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
-    
-  
-  
-
-  
-  <link rel="alternate" href="https://yaqianhe.github.io/index.xml" type="application/rss+xml" title="Yaqian He">
-  <link rel="feed" href="https://yaqianhe.github.io/index.xml" type="application/rss+xml" title="Yaqian He">
-  
-
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="icon" type="image/png" href="/img/icon.png">
-  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
-
-  <link rel="canonical" href="https://yaqianhe.github.io/">
-
-  <meta property="twitter:card" content="summary_large_image">
-  
-  <meta property="og:site_name" content="Yaqian He">
-  <meta property="og:url" content="https://yaqianhe.github.io/">
-  <meta property="og:title" content="Yaqian He">
-  <meta property="og:description" content="Assistant Professor, Geography">
-  
-  
-    
-  <meta property="og:image" content="https://yaqianhe.github.io/img/icon-192.png">
-  <meta property="og:locale" content="en-us">
-  
-  
-  
-
-  
-
-  
-
-  <title>Yaqian He</title>
-
+  footer { border-top: 1px solid var(--rule); padding: 2rem; text-align: center; font-size: 0.8rem; color: var(--ink-light); }
+  footer a { color: var(--moss); text-decoration: none; }
+  @media (max-width: 700px) {
+    nav { padding: 0 1rem; }
+    .nav-links a { padding: 0.3rem 0.5rem; font-size: 0.75rem; }
+    .page-header { padding: 2rem 1.25rem 1.5rem; }
+    .section { padding: 2rem 1.25rem; }
+    .pub-item { grid-template-columns: 30px 1fr; }
+  }
+</style>
 </head>
-<body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71" >
-
-<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
-  <div class="container justify-content-center">
-
-    
-      <a class="navbar-brand" href="/">Geospatial and Environmental Modeling Group @ IU Bloomington</a>
-      
-      <button type="button" class="navbar-toggler" data-toggle="collapse"
-              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-        <span><i class="fas fa-bars"></i></span>
-      </button>
-      
-
-    
-    <div class="collapse navbar-collapse" id="navbar">
-
-      
-      
-      <ul class="navbar-nav ml-auto">
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link" href="/people" data-target="/people">
-            
-            <span>People</span>
-            
-          </a>
-        </li>
-
-        
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link" href="/research" data-target="/research">
-            
-            <span>Research</span>
-            
-          </a>
-        </li>
-
-        
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link" href="/publications" data-target="/publications">
-            
-            <span>Publications</span>
-            
-          </a>
-        </li>
-
-        
-    
-
-        
-
-           
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link" href="/teaching" data-target="/teaching">
-            
-            <span>Teaching</span>
-            
-          </a>
-        </li>
-
-        
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link" href="/data" data-target="/data">
-            
-            <span>Data</span>
-            
-          </a>
-        </li>
-
-        
-        
-         <li class="nav-item">
-          <a class="nav-link" href="/opportunities" data-target="/opportunities">
-            
-            <span>Opportunities</span>
-            
-          </a>
-        </li>   
-        
-        <!--
-          <li class="nav-item">
-          <a class="nav-link" href="/contact" data-target="/contact">
-            
-            <span>Contact</span>
-            
-          </a>
-        </li>         
-        //-->           
-        
-          
-        
-        
-        
-
-      
-
-        
-
-        
-      </ul>
-
-    </div>
-  </div>
+<body>
+<nav>
+  <a href="index.html" class="nav-brand">Geospatial & Environmental Modeling Group</a>
+  <ul class="nav-links">
+    <li><a href="research.html">Research</a></li>
+    <li><a href="publications.html" class="active">Publications</a></li>
+    <li><a href="people.html">People</a></li>
+    <li><a href="teaching.html">Teaching</a></li>
+    <li><a href="data.html">Data</a></li>
+    <li><a href="opportunities.html">Opportunities</a></li>
+  </ul>
 </nav>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="universal-wrapper"> 
-
-<h2 id="Submitted-or-In-Revision">Submitted or In Revision</h2><u>student advised</u>
-<!--<p>8. <b>He, Y.</b>, Yang, D., Peter, B., Huang, X., and <u>Faith, V.</u>, Integration of remote sensing, big data, and GeoAI in “Remote Sensing, Big Data, and GeoAI: Exploring Applications with Geospatial Insights” edited by Bunting, E., Southworth, J., Gibbes, C., and Herrero, H. (book chapter) <em>submitted</em></p>-->
-<!--<p>7. <b>He, Y.</b>, Huang, M., Shahpar, S., Wei, G., and Liu, X., Leveraging satellite data for near real-time prediction of extreme precipitation in “Data-Driven Earth Observation for Disaster Management: From Theory to Practical Applications”. edited by Huang, X., Wang, S., Kalogeropoulos, K., and Tsatsaris, A. (book chapter) <em>submitted</em></p>-->
-<p>5. Pavlovic, N., Malings, C., Huang, M., <b>He, Y.</b>, Diez, S., Bratburd, J., Mahmoud, H., Schnell, J., Hang, Y., Anderson, L., Grodzinsky, G., deSouza, P., Mead, I.M., Rao, D. Y., Velho, R., Davignon, D., Munde, S., Sayeed, A., Aekakkararungroj, A., Joshi, A., Olayinka, O., and Rondouba, D.H., Satellite-derived air quality data can effectively support health needs when use cases, earth observing capabilities, and capacities align. <em>under review</em></p>
-<p>4. Li, Y., Cheng, L., <b>He, Y.</b>, Crop yield response to drought-pluvial volatility over the contiguous United States. <em>under review</em></p>
-<p>3. Tay, W., Peter, B., <b>He, Y.</b>, Messina, J., and Fang, P. Land change dynamics in Indonesia and the multi-decadal cycle of agricultural land conversions, urbanization, and deforestation. <em>under review</em></p>
-<p>2. Lee, E., Im, A., Kim, M., Kim, Y., <b>He, Y.</b>, Kim, K., and Hyun, Y., Vegetation and Summer Monsoon Interactions in East Asia. <em>resubmitted</em></p>
-<p>1. <b>He, Y.</b>, Yang, D., <u>Li, S.</u>, Cheng, L., and Fang, F., Enhanced extreme precipitation simulation in China using NCAR CESM based on a realistic remotely-sensed time series of annual land cover and land use data from 1982 to 2013. <em>under review</em></p>
-<hr />
-
-<h2 id="Peer-reviewed-Journal-Articles">Peer-reviewed Publications</h2>
-<p>51. Yang, D., Tai, X., <b>He, Y.</b>, Li, S., and Katabuchi, M. 2026. Deforestation assessment. In: Huang, X., Wang, S., Kalogeropoulos, K., and Tsatsaris, A. (eds) Data-Driven Earth Observation for Disaster Management: From Theory to Practical Applications. Elsevier. (book chapter) [<a href="https://www.sciencedirect.com/science/chapter/edited-volume/abs/pii/B9780443338038000032" target="_blank">link</a>]</p>
-
-<p>50. <b>He, Y.</b>, Huang, M., Shahpar, S., Wei, G., Liu, X., and Wang, Z. 2026. Extreme precipitation. In: Huang, X., Wang, S., Kalogeropoulos, K., and Tsatsaris, A. (eds) Data-Driven Earth Observation for Disaster Management: From Theory to Practical Applications. Elsevier. (book chapter) [<a href="https://www.sciencedirect.com/science/chapter/edited-volume/abs/pii/B9780443338038000202" target="_blank">link</a>]</p>
-
-<p>49. <u>Li, S.</u>, Yang, D*.,<b>He, Y*.</b>, Li,Y., and Liu, W. 2026. The impact of land cover change-climate interactions on ecosystem productivity in the Arctic-Boreal region. Agricultural and Forest Meteorology, 383, 111137. (* corresponding author) [<a href="https://doi.org/10.1016/j.agrformet.2026.111137" target="_blank">link</a>]<p> 
-
-<p>48. Im, A., Kim, S., Choi, H., <b>He, Y.</b>, and Lee, E. 2026. Changes in Environmental and Economic Benefits Caused by Land Use Policies in China: A Case Study of the Grain for Green Program. Journal of the Korean Geographical Society, 61(1), 1-21. [<a href="https://journal.kgeography.or.kr/articles/article/dwrA/#Abstract" target="_blank">link</a>]<p> 
-
-<p>47. <u>Li, S.</u>, <b>He, Y*.</b>, Yang, D*.,Li,Y. and Liu, W. 2026. Incorporating learned geospatial embeddings to deep image prior for inpainting cloud areas in remotely sensed images. Science of Remote Sensing, 13, 100404. (* corresponding author) [<a href="https://www.sciencedirect.com/science/article/pii/S2666017226000428" target="_blank">link</a>]<p> 
-
-<p>46. Maxwell, A., Ramezan, C. and <b>He, Y.</b> 2025. Supervised Learning in Remote Sensing and Geospatial Science: Theory and Practice. ELsevier. (book) [<a href="https://doi.org/10.1016/C2023-0-01427-3" target="_blank">link</a>]</p>
-
-<p>45. <u>Faith, V.</u>, <b>He, Y.</b>, Pearson, B., Noyes, R., Tullis, J.A., Moreno-Martínez, Á., Izquierdo-Verdiguier, E., and Clinton, N. 2025. Characterizing spatiotemporal patterns of field-scale soybean phenology in the Arkansas Delta region using multi-source remote sensing data from 2002 to 2020. Papers in Applied Geography, 1–16. [<a href="https://www.tandfonline.com/doi/abs/10.1080/23754931.2025.2586545" target="_blank">link</a>]<p> 
-
-<p>44. <b>He, Y.</b>, Yang, D., Lee, E., and Yang, A. 2025. Land Cover and Land Use Change Impacts on Temperature Extremes in China from 1982 to 2013. In: Mutanga, O., Pandey, P.C., Das, S., Chatterjee, U. (eds) Revealing Ecosystem Services Through Geospatial Technologies. Springer Remote Sensing/Photogrammetry. Springer, Cham. (book chapter) [<a href="https://link.springer.com/chapter/10.1007/978-3-031-98048-0_12#citeas." target="_blank">link</a>]</p>
-
-<p>43. <u>Li, S.</u>, Yang, D*., <b>He, Y*.</b>, Parazoo, N., and Liu, W. 2025. The Biogeophysical Impacts of Land Cover Change on Climate Extremes in the Arctic and Boreal Regions. Environmental Research Letters, 20, 084057. (* corresponding author) [<a href="https://iopscience.iop.org/article/10.1088/1748-9326/adeba0#:~:text=Land%20cover%20change%20(LCC)%2D,to%20enhance%20regional%20climate%20resilience." target="_blank">link</a>]</p>
-
-<p>42. He, Q., Xu, Y., <b>He, Y.</b>, and Connolly, M. 2025. Agriculture and conflict and cooperation over international river basins: An analysis based on remotely sensed data. International Studies Quarterly, 69(3). [<a href="https://academic.oup.com/isq/article/69/3/sqaf048/8176721" target="_blank">link</a>]</p>
-
-<p>41. Liu, W., Li, S., Fan, D., Wen, Y., Madson, A., Mitchell, J., <b>He, Y.</b>, and Yang, D. 2025. A Deep Learning Workflow for CORONA-based Historical Land Use Classifications. IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing. [<a href="https://ieeexplore.ieee.org/document/11048867" target="_blank">link</a>]</p>
-
-<p>40. Liao, L., Yuan, F., <b>He, Y.</b>, Xu, S., Tang, X., Xie, M., Tang, X., Tang, Z., Zeng, G., and Song, C. 2025. Spatiotemporal disparities in maternal mortality and the role of multiscale administrative levels: a 20-year study across Chinese counties. Frontiers in Public Health, 13, 1572382. [<a href="https://www.frontiersin.org/journals/public-health/articles/10.3389/fpubh.2025.1572382/full" target="_blank">link</a>]</p>
-
-<p>39. Im, A., Lee, E. and <b>He, Y.</b>, 2024. Detecting land cover and land use transitions and the associated temperature changes in the East Asian monsoon region. The Geographical Journal, p.e12590.[<a href="https://rgs-ibg.onlinelibrary.wiley.com/doi/10.1111/geoj.12590" target="_blank">link</a>]</p>
-
-<p>38. Tang, Q., Zhao, Y., <b>He, Y.</b>, Yu, Q., and Liang, T. 2024. Analysis of Aerosol Types and Vertical Distribution in Seven Typical Cities in East Asia. Atmosphere, 15(2), p.195.[<a href="https://www.mdpi.com/2073-4433/15/2/195" target="_blank">link</a>]</p>
-
-<p>37. <b>He, Y.</b>, Connolly, M. H., Xu, R., Huang, X., Wang, Z., <u>Filares-Arreguin, M.</u>, and <u>Rhodes, C.</u> 2023. Impacts of irrigation-climate interactions on irrigated soybean yields in the US Arkansas Delta from 2003 to 2017. Progress in Physical Geography: Earth and Environment, 0(0).[<a href="https://journals.sagepub.com/doi/10.1177/03091333231169443" target="_blank">link</a>]</p>
-
-<p>36. Wang P., Tang Q., Zhu Y., <b>He, Y.</b>, Yu Q., Liang T., and Ran Y., 2023. Coupling coordination degree of AOD and air pollutants in Shandong Province from 2015 to 2020. Atmosphere,14(4):654.[<a href="https://www.mdpi.com/2073-4433/14/4/654" target="_blank">link</a>]</p>
-
-<p>35. Huang, X., Yang, D., <b>He, Y.</b>, Nelson, P., Low, R., McBride, S., Mitchell, J. and Guarraia, M. 2023. Land cover mapping via crowdsourced multi-directional views: The more directional views, the better. International Journal of Applied Earth Observation and Geoinformation, 122, p.103382. [<a href="https://www.sciencedirect.com/science/article/pii/S1569843223002066" target="_blank">link</a>]</p>
-
-<p>34. <u>Tay, W.</u>, and <b>He, Y.</b> 2023. Detecting land cover and land use change and its impact on biomass carbon emission from 2001 to 2019 in Arkansas, USA. Biogeochemistry, pp.1-14. [<a href="https://link.springer.com/article/10.1007/s10533-023-01042-x" target="_blank">link</a>]</p>
-
-<p>33. Fang, F., Greenlee, A.J., <b>He, Y</b>, and Eutsler, E. 2023. Evaluating the quality of street trees in Washington, DC: Implications for environmental justice. Urban Forestry & Urban Greening, 85, p.127947. [<a href="https://www.sciencedirect.com/science/article/abs/pii/S1618866723001188" target="_blank">link</a>]</p>
-
-<p>32. <b>He, Y</b>, <u>P. Siminara</u>, X. Huang, D. Yang, F. Fang, and C. Song. 2023. Geospatial Modeling of Health, Socioeconomic, Demographic, and Environmental Factors with COVID-19 Incidence Rate in Arkansas, US. ISPRS Int. J. Geo-Inf, 12(2), 45. [<a href="https://www.mdpi.com/2220-9964/12/2/45" target="_blank">link</a>]</p>
-
-<p>31. Wang, P., Tang, Q., Zhu, Y., Zheng, K., Liang, T., Yu, Q. and <b>He, Y.</b>. 2022. Validation and Analysis of MAIAC AOD Aerosol Products in East Asia from 2011 to 2020. Remote Sensing, 14(22). [<a href="https://www.mdpi.com/2072-4292/14/22/5735" target="_blank">link</a>]</p>
-
-<p>30. Wang, P., Tang, Q., Zhu, Y., <b>He, Y.</b>, Yu, Q., Liang, T. and Zheng, K., 2022. Spatial-temporal variation of AOD based on MAIAC AOD in East Asia from 2011 to 2020. Atmosphere, 13(12). [<a href="https://www.mdpi.com/2073-4433/13/12/1983" target="_blank">link</a>]</p>
-
-<p>29. <b>He, Y.</b>, J. Chipman, N. Siegert, J. S. Mankin, 2022. Rapid land cover and land use change in the Indo-Malaysian region over the last 34 years based on AVHRR NDVI data. Annals of the American Association of Geographers, 1-21. [<a href="https://www.tandfonline.com/doi/full/10.1080/24694452.2022.2077168" target="_blank">link</a>]</p>
-
-<p>28. He, Q., Q. Meng, W. Flatley, <b>Y. He</b>, 2022. Agricultural aid and deforestation in sub-Saharan Africa: a causal analysis based on remote sensed data of Sierra Leone. Land, 11, 668.[<a href="https://www.mdpi.com/2073-445X/11/5/668" target="_blank">link</a>]</p>
-
-<p>27. Yadav, S., E. Lee.,<b>Y. He</b>, 2022. Positive effects of vegetation on temperature over the Alpine Grasslands in the Western Tibetan Plateau. Earth Interactions. [<a href="https://journals.ametsoc.org/view/journals/eint/aop/EI-D-21-0017.1/EI-D-21-0017.1.xml" target="_blank">link</a>]</p>
-
-<p>26. <b>He, Y.+</b>, J.Oh+, E. Lee, J. Kim, 2022. Land cover and land use mapping of the East Asian Summer Monsoon region from 1982 to 2015. Land, 11, 391. (+contribute equally) [<a href="https://doi.org/10.3390/land11030391" target="_blank">link</a>]</p>
-
-<p>25. Yang A., J. Yang, D. Yang, R. Xu, <b>Y. He</b>, A. Aragon, and H. Qiu, 2021. Human Mobility to Parks under the COVID-19 Pandemic and Wildfire Seasons in the Western and Central United States. Geohealth, 5(12). [<a href="https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2021GH000494" target="_blank">link</a>]</p>
-
-<p>24. <b>He, Y.+</b>, R. Xu+, S. A. Prior, D. Yang, A. Yang, J. Chen, 2021. Satellite-detection of ammonia changes in the United States: natural or anthropogenic impacts. Science of the Total Environment, 147899. (+contribute equally) [<a href="https://www.sciencedirect.com/science/article/abs/pii/S0048969721029703" target="_blank">link</a>]</p>
-
-<p>23. Liu, J., W. Shen, <b>Y. He*</b>, 2021. Effects of cropland expansion on temperature extremes in western India from 1982 to 2015. Land, 10, 489. (* corresponding author) [<a href="https://doi.org/10.3390/land10050489" target="_blank">link</a>]</p>
-
-<p>22. You, G., Liu, B., Zou, C., Li, H., McKenzie, S., <b>He, Y.</b>, Gao, J., Jia, X., Arain, M.A., Wang, S. and Wang, Z., 2021. Sensitivity of vegetation dynamics to climate variability in a forest-steppe transition ecozone, north-eastern Inner Mongolia, China. Ecological Indicators, 120, p.106833. [<a href="https://www.sciencedirect.com/science/article/pii/S1470160X20307718" target="_blank">link</a>]</p>
-
-<p>21.  Li, Y., Chen, Y., Wang, F., <b>He, Y.</b>, and Li, Z., 2020. Evaluation and projection of snowfall changes in High Mountain Asia based on NASA's NEX-GDDP high-resolution daily downscaled dataset. Environmental Research Letters, 15(10), p.104040. [<a href="https://iopscience.iop.org/article/10.1088/1748-9326/aba926" target="_blank">link</a>]</p>
-
-<p>20. You, G., Arain, M.A., Wang, S., McKenzie, S., Xu, B., <b>He, Y.</b>, Wu, D., Lin, N., Gao, J. and Jia, X., 2020. Inter-annual Climate Variability and Vegetation Dynamic in the Upper Amur (Heilongjiang) River Basin in Northeast Asia. Environmental Research Communications, 2(6), p.061003. [<a href="https://iopscience.iop.org/article/10.1088/2515-7620/ab9525" target="_blank">link</a>]</p>
-
-<p>19. <b>He, Y.</b>, Lee, E., and Mankin, J.S., 2020. Seasonal tropospheric cooling in Northeast China associated with cropland expansion. Environmental Research Letters. [<a href="https://iopscience.iop.org/article/10.1088/1748-9326/ab6616/meta" target="_blank">link</a>]</p>
-
-<p>18. Ji, X., Li, X., <b>He, Y.*</b>, and Liu, X., 2019. A Simple Method to Improve Estimates of County-Level Economics in China Using Nighttime Light Data and GDP Growth Rate.  ISPRS Int. J. Geo-Inf,  8, 419. (* corresponding author) [<a href="https://www.mdpi.com/2220-9964/8/9/419" target="_blank">link</a>]</p>
-
-<p>17. Song, C.+, <b>He, Y.+</b>, Bo, Y., Wang, J., Ren, Z., Guo, J. and Yang, H., 2019. Disease relative risk downscaling model to localize various epidemiologic indicators for mapping hand, foot, and mouth disease over China. Stochastic Environmental Research and Risk Assessment, 1-19. (+contribute equally) [<a href="https://link.springer.com/article/10.1007/s00477-019-01728-5" target="_blank">link</a>]</p>
-
-<p>16. Gaertner, B.A., Zegre, N., Warner, T., Fernandez, R., <b>He, Y.</b>, and Merriam, E.R., 2019. Climate, forest growing season, and evapotranspiration changes in the central Appalachian Mountains, USA. Science of The Total Environment, 650, pp.1371-1381. [<a href="https://www.sciencedirect.com/science/article/abs/pii/S004896971833571X" target="_blank">link</a>]</p>
-
-<p>15. Lee, E., and <b>Y. He</b>, 2018. Could the Enhanced Forests Reduce Summer Warming in the Southern China?. Journal of Climate Research, 13(4), p.345-359. [<a href="http://www.dbpia.co.kr/Journal/articleDetail?nodeId=NODE07612807" target="_blank">link</a>]</p>
-
-<p>14. Lee, E., <b>Y. He</b>, and Y-L. Park, 2018. Effects of Climate Change on the Phenology of Osmia cornifrons: implications for population management. Climatic Change. [<a href="https://link.springer.com/article/10.1007/s10584-018-2286-z#citeas" target="_blank">link</a>]</p>
-
-<p>13. Song, C., <b>Y. He</b>, Y. Bo,  J. Wang, Z. Ren, H. Yang, 2018. Risk Assessment and Mapping of Hand, Foot, and Mouth Disease at the County Level in Mainland China Using Spatiotemporal Zero-Inflated Bayesian Hierarchical Models. Int. J. Environ. Res. Public Health, 15, 1476. [<a href="https://www.mdpi.com/1660-4601/15/7/1476" target="_blank">link</a>]</p>
-
-<p>12. <b>He, Y.</b>, T. A. Warner, B. E. McNeil, and E. Lee, 2018. Reducing Uncertainties in Applying Remotely Sensed Land Use and Land Cover Maps in Land-Atmosphere Interaction: Identifying Change in Space and Time, Remote Sensing, 10, 506. [<a href="https://www.mdpi.com/2072-4292/10/4/506" target="_blank">link</a>]</p>
-
-<p>11. Lee, E., <b>Y. He</b>, and J. Shanmugasundaram, 2017. "Geography of Monsoons." In Oxford Bibliographies in Geography. Ed. Barney Warf. New York: Oxford University Press. [<a href="https://www.oxfordbibliographies.com/view/document/obo-9780199874002/obo-9780199874002-0175.xml" target="_blank">link</a>]</p>
-
-<p>10. <b>He, Y.</b>, E. Lee, T. A. Warner, 2017. A time-series of annual land use and land cover maps of China from 1982 to 2013 generated using AVHRR GIMMS NDVI3g data. Remote Sensing of Environment 199, 201-217. [<a href="https://www.sciencedirect.com/science/article/abs/pii/S0034425717303255" target="_blank">link</a>]</p>
-
-<p>9. <b>He, Y.</b>, E. Lee, 2016. Empirical relationships of sea surface temperature and vegetation activity with summer rainfall variability over the Sahel. Earth Interactions 20(6), 1-18. [<a href="https://journals.ametsoc.org/view/journals/eint/20/6/ei-d-15-0028.1.xml" target="_blank">link</a>]</p>
-
-<p>8. <b>He, Y.</b>, Y. Bo, L. Chai, X. Liu, and A. Li, 2016. Linking in situ LAI and fine resolution remote sensing data to map reference LAI over cropland and grassland using geostatistical method. International Journal of Applied Earth Observation and Geoinformation 50, 26-38. [<a href="https://www.sciencedirect.com/science/article/abs/pii/S0303243416300216" target="_blank">link</a>]</p>
-
-<p>7. Ahn, J.J., Y. Son, <b>Y. He</b>, E. Lee, Y-L. Park, 2016. Effects of Temperature on Development an Voltinism of Chaetodactylus krombeini (Acari: Chaetodactylidae): Implications for Climate Change Impacts. PLoS ONE 11(8): e0161319, doi:10.1371/journal.pone.0161319. [<a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0161319" target="_blank">link</a>]</p>
-
-<p>6. <b>He, Y.</b>, Y. Bo, R. de Jong, A. Li, Y. Zhu, and J. Cheng, 2015. Comparison of vegetation phenological metrics extracted from GIMMS NDVIg and MERIS MTCI datasets over China. International Journal of Remote Rensing, 2015, 36(1), 300-317. [<a href="https://www.tandfonline.com/doi/abs/10.1080/01431161.2014.994719" target="_blank">link</a>]</p>
-
-<p>5. Lee, E., <b>Y. He</b>, M. Zhou, and J. Liang, 2015. Potential feedback of recent vegetation changes on summer rainfall in the Sahel, Physical Geography, 36(6), 449-470, doi: 10.1080/02723646.2015.1120139. [<a href="https://www.tandfonline.com/doi/abs/10.1080/02723646.2015.1120139" target="_blank">link</a>]</p>
-
-<p>4. Zhu, Y., E. Kang, Y. B, Q. Tang, J. Cheng, and <b>Y. He</b>, 2015. A Robust Fixed Rank Kriging Method for Improving the Spatial Completeness and Accuracy of Satellite SST Products. IEEE Transactions on Geoscience and Remote Sensing, 53(9), 5021-5035. [<a href="https://ieeexplore.ieee.org/document/7088609" target="_blank">link</a>]</p>
-
-<p>3. Liu, X., Y. Bo, J. Zhang, and <b>Y. He</b>, 2015. Classification of C3 and C4 Vegetation Types Using MODIS and ETM+ Blended High Spatio-Temporal Resolution Data. Remote Sensing, 7(11), 15244-15268. [<a href="https://www.mdpi.com/2072-4292/7/11/15244" target="_blank">link</a>]</p>
-
-<p>2. Zheng, L., Y. Bo, and <b>Y. He</b>, 2015. Comparison of natural vegetation phenology developed from MODIS and CYCLOPES and GLASS LAI data product based on dynamical threshold method: a case study in three provinces of Northeast China. Remote Sensing Technology and Application, 30 (6), 1103-1112. (Chinese with English abstract) </p>
-
-<p>1. Li, A., Y. Bo, Y. Zhu, P. Guo, J. Bi, and <b>Y. He</b>, 2013. Blending multi-resolution satellite sea surface temperature (SST) products using Bayesian maximum entropy method. Remote Sensing of Environment, 135, 52-63, doi: 10.1016/j.rse.2013.03.021. [<a href="https://www.sciencedirect.com/science/article/abs/pii/S0034425713001004" target="_blank">link</a>]</p>
-
-<hr />
-</div>
-  
-
-  
-  
-
-  
-
-</div>
-<div class="container">
-  <footer class="site-footer">
-  
-
-  <p class="powered-by">
-    Yaqian He &middot; 
-    (made with <a href="https://georgecushen.com/create-your-website-with-hugo/" target="_blank">hugo academic</a>)
-
-  </p>
-</footer>
-
-
-</div>
-
-
-<div id="modal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Cite</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <pre><code class="tex hljs"></code></pre>
-      </div>
-      <div class="modal-footer">
-        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
-          <i class="fas fa-copy"></i> Copy
-        </a>
-        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
-          <i class="fas fa-download"></i> Download
-        </a>
-        <div id="modal-error"></div>
-      </div>
-    </div>
+<header class="page-header">
+  <div>
+    <p class="page-eyebrow">Scholarly output</p>
+    <h1 class="page-title">Publications</h1>
   </div>
-</div>
+  <div style="text-align:right">
+    <span class="pub-count"><strong>51+</strong> peer-reviewed works</span>
+  </div>
+</header>
 
+<!-- SUBMITTED / IN REVISION -->
+<section class="section">
+  <h2 class="section-title">Submitted or In Revision</h2>
+  <p class="note-student"><u>student advised<u></p>
+  <ol class="pub-list" reversed style="list-style:none">
+    <li class="pub-item">
+      <span class="pub-num">5</span>
+      <p class="pub-body">Pavlovic, N., Malings, C., Huang, M., <strong>He, Y.</strong>, et al. Satellite-derived air quality data can effectively support health needs when use cases, earth observing capabilities, and capacities align. <em>Under review.</em></p>
+    </li>
+    <li class="pub-item">
+      <span class="pub-num">4</span>
+      <p class="pub-body">Li, Y., Cheng, L., <strong>He, Y.</strong> Crop yield response to drought-pluvial volatility over the contiguous United States. <em>Under review.</em></p>
+    </li>
+    <li class="pub-item">
+      <span class="pub-num">3</span>
+      <p class="pub-body">Tay, W., Peter, B., <strong>He, Y.</strong>, Messina, J., and Fang, P. Land change dynamics in Indonesia and the multi-decadal cycle of agricultural land conversions, urbanization, and deforestation. <em>Under review.</em></p>
+    </li>
+    <li class="pub-item">
+      <span class="pub-num">2</span>
+      <p class="pub-body">Lee, E., Im, A., Kim, M., Kim, Y., <strong>He, Y.</strong>, Kim, K., and Hyun, Y. Vegetation and Summer Monsoon Interactions in East Asia. <em>Resubmitted.</em></p>
+    </li>
+    <li class="pub-item">
+      <span class="pub-num">1</span>
+      <p class="pub-body"><strong>He, Y.</strong>, Yang, D., <u>Li, S.<u>, Cheng, L., and Fang, F. Enhanced extreme precipitation simulation in China using NCAR CESM based on a realistic remotely-sensed time series of annual land cover and land use data from 1982 to 2013. <em>Under review.</em></p>
+    </li>
+  </ol>
+</section>
 
-    
+<!-- PEER-REVIEWED -->
+<section class="section">
+  <h2 class="section-title">Peer-reviewed Publications</h2>
+  <ul class="pub-list">
+    <li class="pub-item">
+      <span class="pub-num">51</span>
+      <p class="pub-body">Yang, D., Tai, X., <strong>He, Y.</strong>, Li, S., and Katabuchi, M. 2026. Deforestation assessment. In: Huang, X. et al. (eds) <em>Data-Driven Earth Observation for Disaster Management.</em> Elsevier. <span class="pub-tag tag-chapter">Book Chapter</span><br><a href="https://www.sciencedirect.com/science/chapter/edited-volume/abs/pii/B9780443338038000032" class="pub-link" target="_blank" rel="noopener">View →</a></p>
+    </li>
+    <li class="pub-item">
+      <span class="pub-num">50</span>
+      <p class="pub-body"><strong>He, Y.</strong>, Huang, M., Shahpar, S., Wei, G., Liu, X., and Wang, Z. 2026. Extreme precipitation. In: Huang, X. et al. (eds) <em>Data-Driven Earth Observation for Disaster Management.</em> Elsevier. <span class="pub-tag tag-chapter">Book Chapter</span><br><a href="https://www.sciencedirect.com/science/chapter/edited-volume/abs/pii/B9780443338038000202" class="pub-link" target="_blank" rel="noopener">View →</a></p>
+    </li>
+    <li class="pub-item">
+      <span class="pub-num">49</span>
+      <p class="pub-body"><u>Li, S.<u>, Yang, D.*, <strong>He, Y.*</strong>, Li, Y., and Liu, W. 2026. The impact of land cover change–climate interactions on ecosystem productivity in the Arctic-Boreal region. <em>Agricultural and Forest Meteorology,</em> 383, 111137.<br><a href="https://doi.org/10.1016/j.agrformet.2026.111137" class="pub-link" target="_blank" rel="noopener">View →</a></p>
+    </li>
+    <li class="pub-item">
+      <span class="pub-num">48</span>
+      <p class="pub-body">Im, A., Kim, S., Choi, H., <strong>He, Y.</strong>, and Lee, E. 2026. Changes in Environmental and Economic Benefits Caused by Land Use Policies in China. <em>Journal of the Korean Geographical Society,</em> 61(1), 1–21.<br><a href="https://journal.kgeography.or.kr/articles/article/dwrA/" class="pub-link" target="_blank" rel="noopener">View →</a></p>
+    </li>
+    <li class="pub-item">
+      <span class="pub-num">47</span>
+      <p class="pub-body"><u>Li, S.<u>, <strong>He, Y.*</strong>, Yang, D.*, Li, Y., and Liu, W. 2026. Incorporating learned geospatial embeddings to deep image prior for inpainting cloud areas in remotely sensed images. <em>Science of Remote Sensing,</em> 13, 100404.<br><a href="https://www.sciencedirect.com/science/article/pii/S2666017226000428" class="pub-link" target="_blank" rel="noopener">View →</a></p>
+    </li>
+    <li class="pub-item">
+      <span class="pub-num">46</span>
+      <p class="pub-body">Maxwell, A., Ramezan, C., and <strong>He, Y.</strong> 2025. <em>Supervised Learning in Remote Sensing and Geospatial Science: Theory and Practice.</em> Elsevier. <span class="pub-tag tag-book">Book</span><br><a href="https://doi.org/10.1016/C2023-0-01427-3" class="pub-link" target="_blank" rel="noopener">View →</a></p>
+    </li>
+    <li class="pub-item">
+      <span class="pub-num">45</span>
+      <p class="pub-body"><u>Faith, V.<u>, <strong>He, Y.</strong>, Pearson, B., et al. 2025. Characterizing spatiotemporal patterns of field-scale soybean phenology in the Arkansas Delta region using multi-source remote sensing data from 2002 to 2020. <em>Papers in Applied Geography,</em> 1–16.<br><a href="https://www.tandfonline.com/doi/abs/10.1080/23754931.2025.2586545" class="pub-link" target="_blank" rel="noopener">View →</a></p>
+    </li>
+    <li class="pub-item">
+      <span class="pub-num">44</span>
+      <p class="pub-body"><strong>He, Y.</strong>, Yang, D., Lee, E., and Yang, A. 2025. Land Cover and Land Use Change Impacts on Temperature Extremes in China from 1982 to 2013. In: Mutanga, O. et al. (eds) <em>Revealing Ecosystem Services Through Geospatial Technologies.</em> Springer. <span class="pub-tag tag-chapter">Book Chapter</span><br><a href="https://link.springer.com/chapter/10.1007/978-3-031-98048-0_12" class="pub-link" target="_blank" rel="noopener">View →</a></p>
+    </li>
+    <li class="pub-item">
+      <span class="pub-num">43</span>
+      <p class="pub-body"><u>Li, S.<u>, Yang, D.*, <strong>He, Y.*</strong>, Parazoo, N., and Liu, W. 2025. The Biogeophysical Impacts of Land Cover Change on Climate Extremes in the Arctic and Boreal Regions. <em>Environmental Research Letters,</em> 20, 084057.<br><a href="https://iopscience.iop.org/article/10.1088/1748-9326/adeba0" class="pub-link" target="_blank" rel="noopener">View →</a></p>
+    </li>
+    <li class="pub-item">
+      <span class="pub-num">42</span>
+      <p class="pub-body">He, Q., Xu, Y., <strong>He, Y.</strong>, and Connolly, M. 2025. Agriculture and conflict and cooperation over international river basins. <em>International Studies Quarterly,</em> 69(3).<br><a href="https://academic.oup.com/isq/article/69/3/sqaf048/8176721" class="pub-link" target="_blank" rel="noopener">View →</a></p>
+    </li>
+    <li class="pub-item">
+      <span class="pub-num">41</span>
+      <p class="pub-body">Liu, W., Li, S., Fan, D., Wen, Y., Madson, A., Mitchell, J., <strong>He, Y.</strong>, and Yang, D. 2025. A Deep Learning Workflow for CORONA-based Historical Land Use Classifications. <em>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing.</em><br><a href="https://ieeexplore.ieee.org/document/11048867" class="pub-link" target="_blank" rel="noopener">View →</a></p>
+    </li>
+    <li class="pub-item">
+      <span class="pub-num">40</span>
+      <p class="pub-body">Liao, L., Yuan, F., <strong>He, Y.</strong>, et al. 2025. Spatiotemporal disparities in maternal mortality and the role of multiscale administrative levels: a 20-year study across Chinese counties. <em>Frontiers in Public Health,</em> 13, 1572382.<br><a href="https://www.frontiersin.org/journals/public-health/articles/10.3389/fpubh.2025.1572382/full" class="pub-link" target="_blank" rel="noopener">View →</a></p>
+    </li>
+    <li class="pub-item">
+      <span class="pub-num">39</span>
+      <p class="pub-body">Im, A., Lee, E., and <strong>He, Y.</strong> 2024. Detecting land cover and land use transitions and the associated temperature changes in the East Asian monsoon region. <em>The Geographical Journal,</em> e12590.<br><a href="https://rgs-ibg.onlinelibrary.wiley.com/doi/10.1111/geoj.12590" class="pub-link" target="_blank" rel="noopener">View →</a></p>
+    </li>
+    <li class="pub-item">
+      <span class="pub-num">38</span>
+      <p class="pub-body">Tang, Q., Zhao, Y., <strong>He, Y.</strong>, Yu, Q., and Liang, T. 2024. Analysis of Aerosol Types and Vertical Distribution in Seven Typical Cities in East Asia. <em>Atmosphere,</em> 15(2), 195.<br><a href="https://www.mdpi.com/2073-4433/15/2/195" class="pub-link" target="_blank" rel="noopener">View →</a></p>
+    </li>
+    <li class="pub-item">
+      <span class="pub-num">37</span>
+      <p class="pub-body"><strong>He, Y.</strong>, Connolly, M. H., Xu, R., Huang, X., Wang, Z., <u>Filares-Arreguin, M.<u>, and <u>Rhodes, C.<u> 2023. Impacts of irrigation–climate interactions on irrigated soybean yields in the US Arkansas Delta from 2003 to 2017. <em>Progress in Physical Geography,</em> 0(0).<br><a href="https://journals.sagepub.com/doi/10.1177/03091333231169443" class="pub-link" target="_blank" rel="noopener">View →</a></p>
+    </li>
+    <li class="pub-item">
+      <span class="pub-num">36</span>
+      <p class="pub-body">Wang P., Tang Q., Zhu Y., <strong>He, Y.</strong>, Yu Q., Liang T., and Ran Y. 2023. Coupling coordination degree of AOD and air pollutants in Shandong Province from 2015 to 2020. <em>Atmosphere,</em> 14(4), 654.<br><a href="https://www.mdpi.com/2073-4433/14/4/654" class="pub-link" target="_blank" rel="noopener">View →</a></p>
+    </li>
+    <li class="pub-item">
+      <span class="pub-num">35</span>
+      <p class="pub-body">Huang, X., Yang, D., <strong>He, Y.</strong>, Nelson, P., et al. 2023. Land cover mapping via crowdsourced multi-directional views. <em>International Journal of Applied Earth Observation and Geoinformation,</em> 122, 103382.<br><a href="https://www.sciencedirect.com/science/article/pii/S1569843223002066" class="pub-link" target="_blank" rel="noopener">View →</a></p>
+    </li>
+    <li class="pub-item">
+      <span class="pub-num">34</span>
+      <p class="pub-body"><u>Tay, W.<u>, and <strong>He, Y.</strong> 2023. Detecting land cover and land use change and its impact on biomass carbon emission from 2001 to 2019 in Arkansas. <em>Biogeochemistry,</em> 1–14.<br><a href="https://link.springer.com/article/10.1007/s10533-023-01042-x" class="pub-link" target="_blank" rel="noopener">View →</a></p>
+    </li>
+    <li class="pub-item">
+      <span class="pub-num">33</span>
+      <p class="pub-body">Fang, F., Greenlee, A.J., <strong>He, Y.</strong>, and Eutsler, E. 2023. Evaluating the quality of street trees in Washington, DC: Implications for environmental justice. <em>Urban Forestry & Urban Greening,</em> 85, 127947.<br><a href="https://www.sciencedirect.com/science/article/abs/pii/S1618866723001188" class="pub-link" target="_blank" rel="noopener">View →</a></p>
+    </li>
+    <li class="pub-item">
+      <span class="pub-num">32</span>
+      <p class="pub-body"><strong>He, Y.</strong>, <u>Siminara, P.<u>, Huang, X., Yang, D., Fang, F., and Song, C. 2023. Geospatial Modeling of Health, Socioeconomic, Demographic, and Environmental Factors with COVID-19 Incidence Rate in Arkansas. <em>ISPRS Int. J. Geo-Inf,</em> 12(2), 45.<br><a href="https://www.mdpi.com/2220-9964/12/2/45" class="pub-link" target="_blank" rel="noopener">View →</a></p>
+    </li>
+    <li class="pub-item">
+      <span class="pub-num">31</span>
+      <p class="pub-body">Wang, P., Tang, Q., Zhu, Y., Zheng, K., Liang, T., Yu, Q., and <strong>He, Y.</strong> 2022. Validation and Analysis of MAIAC AOD Aerosol Products in East Asia from 2011 to 2020. <em>Remote Sensing,</em> 14(22).<br><a href="https://www.mdpi.com/2072-4292/14/22/5735" class="pub-link" target="_blank" rel="noopener">View →</a></p>
+    </li>
+    <li class="pub-item">
+      <span class="pub-num">30</span>
+      <p class="pub-body">Wang, P., Tang, Q., Zhu, Y., <strong>He, Y.</strong>, Yu, Q., Liang, T., and Zheng, K. 2022. Spatial-temporal variation of AOD based on MAIAC AOD in East Asia from 2011 to 2020. <em>Atmosphere,</em> 13(12).<br><a href="https://www.mdpi.com/2073-4433/13/12/1983" class="pub-link" target="_blank" rel="noopener">View →</a></p>
+    </li>
+    <li class="pub-item">
+      <span class="pub-num">29</span>
+      <p class="pub-body"><strong>He, Y.</strong>, Chipman, J., Siegert, N., and Mankin, J. S. 2022. Rapid land cover and land use change in the Indo-Malaysian region over the last 34 years based on AVHRR NDVI data. <em>Annals of the AAG,</em> 1–21.<br><a href="https://www.tandfonline.com/doi/full/10.1080/24694452.2022.2077168" class="pub-link" target="_blank" rel="noopener">View →</a></p>
+    </li>
+    <li class="pub-item">
+      <span class="pub-num">28</span>
+      <p class="pub-body">He, Q., Meng, Q., Flatley, W., and <strong>He, Y.</strong> 2022. Agricultural aid and deforestation in sub-Saharan Africa: a causal analysis based on remote sensed data of Sierra Leone. <em>Land,</em> 11, 668.<br><a href="https://www.mdpi.com/2073-445X/11/5/668" class="pub-link" target="_blank" rel="noopener">View →</a></p>
+    </li>
+    <li class="pub-item">
+      <span class="pub-num">27</span>
+      <p class="pub-body">Yadav, S., Lee, E., and <strong>He, Y.</strong> 2022. Positive effects of vegetation on temperature over the Alpine Grasslands in the Western Tibetan Plateau. <em>Earth Interactions.</em><br><a href="https://journals.ametsoc.org/view/journals/eint/aop/EI-D-21-0017.1/EI-D-21-0017.1.xml" class="pub-link" target="_blank" rel="noopener">View →</a></p>
+    </li>
+    <li class="pub-item">
+      <span class="pub-num">26</span>
+      <p class="pub-body"><strong>He, Y.</strong>†, Oh, J.†, Lee, E., and Kim, J. 2022. Land cover and land use mapping of the East Asian Summer Monsoon region from 1982 to 2015. <em>Land,</em> 11, 391. (†equal contribution)<br><a href="https://doi.org/10.3390/land11030391" class="pub-link" target="_blank" rel="noopener">View →</a></p>
+    </li>
+    <li class="pub-item">
+      <span class="pub-num">25</span>
+      <p class="pub-body">Yang A., Yang, J., Yang, D., Xu, R., <strong>He, Y.</strong>, Aragon, A., and Qiu, H. 2021. Human Mobility to Parks under the COVID-19 Pandemic and Wildfire Seasons in the Western and Central United States. <em>Geohealth,</em> 5(12).<br><a href="https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2021GH000494" class="pub-link" target="_blank" rel="noopener">View →</a></p>
+    </li>
+    <li class="pub-item">
+      <span class="pub-num">24</span>
+      <p class="pub-body"><strong>He, Y.</strong>†, Xu, R.†, Prior, S. A., Yang, D., Yang, A., and Chen, J. 2021. Satellite-detection of ammonia changes in the United States: natural or anthropogenic impacts. <em>Science of the Total Environment,</em> 147899. (†equal contribution)<br><a href="https://www.sciencedirect.com/science/article/abs/pii/S0048969721029703" class="pub-link" target="_blank" rel="noopener">View →</a></p>
+    </li>
+    <li class="pub-item">
+      <span class="pub-num">23</span>
+      <p class="pub-body">Liu, J., Shen, W., and <strong>He, Y.*</strong> 2021. Effects of cropland expansion on temperature extremes in western India from 1982 to 2015. <em>Land,</em> 10, 489.<br><a href="https://doi.org/10.3390/land10050489" class="pub-link" target="_blank" rel="noopener">View →</a></p>
+    </li>
+    <li class="pub-item">
+      <span class="pub-num">22</span>
+      <p class="pub-body">You, G., Liu, B., Zou, C., Li, H., McKenzie, S., <strong>He, Y.</strong>, et al. 2021. Sensitivity of vegetation dynamics to climate variability in a forest-steppe transition ecozone, north-eastern Inner Mongolia, China. <em>Ecological Indicators,</em> 120, 106833.<br><a href="https://www.sciencedirect.com/science/article/pii/S1470160X20307718" class="pub-link" target="_blank" rel="noopener">View →</a></p>
+    </li>
+    <li class="pub-item">
+      <span class="pub-num">21</span>
+      <p class="pub-body">Li, Y., Chen, Y., Wang, F., <strong>He, Y.</strong>, and Li, Z. 2020. Evaluation and projection of snowfall changes in High Mountain Asia based on NASA's NEX-GDDP dataset. <em>Environmental Research Letters,</em> 15(10), 104040.<br><a href="https://iopscience.iop.org/article/10.1088/1748-9326/aba926" class="pub-link" target="_blank" rel="noopener">View →</a></p>
+    </li>
+    <li class="pub-item">
+      <span class="pub-num">20</span>
+      <p class="pub-body">You, G., Arain, M. A., Wang, S., McKenzie, S., Xu, B., <strong>He, Y.</strong>, et al. 2020. Inter-annual Climate Variability and Vegetation Dynamic in the Upper Amur (Heilongjiang) River Basin. <em>Environmental Research Communications,</em> 2(6), 061003.<br><a href="https://iopscience.iop.org/article/10.1088/2515-7620/ab9525" class="pub-link" target="_blank" rel="noopener">View →</a></p>
+    </li>
+    <li class="pub-item">
+      <span class="pub-num">19</span>
+      <p class="pub-body"><strong>He, Y.</strong>, Lee, E., and Mankin, J. S. 2020. Seasonal tropospheric cooling in Northeast China associated with cropland expansion. <em>Environmental Research Letters.</em><br><a href="https://iopscience.iop.org/article/10.1088/1748-9326/ab6616/meta" class="pub-link" target="_blank" rel="noopener">View →</a></p>
+    </li>
+    <li class="pub-item">
+      <span class="pub-num">18</span>
+      <p class="pub-body">Ji, X., Li, X., <strong>He, Y.*</strong>, and Liu, X. 2019. A Simple Method to Improve Estimates of County-Level Economics in China Using Nighttime Light Data. <em>ISPRS Int. J. Geo-Inf,</em> 8, 419.<br><a href="https://www.mdpi.com/2220-9964/8/9/419" class="pub-link" target="_blank" rel="noopener">View →</a></p>
+    </li>
+    <li class="pub-item">
+      <span class="pub-num">17</span>
+      <p class="pub-body">Song, C.†, <strong>He, Y.†</strong>, Bo, Y., Wang, J., Ren, Z., Guo, J., and Yang, H. 2019. Disease relative risk downscaling model to localize various epidemiologic indicators for mapping hand, foot, and mouth disease over China. <em>Stochastic Environmental Research and Risk Assessment,</em> 1–19.<br><a href="https://link.springer.com/article/10.1007/s00477-019-01728-5" class="pub-link" target="_blank" rel="noopener">View →</a></p>
+    </li>
+    <li class="pub-item">
+      <span class="pub-num">16</span>
+      <p class="pub-body">Gaertner, B. A., Zegre, N., Warner, T., Fernandez, R., <strong>He, Y.</strong>, and Merriam, E. R. 2019. Climate, forest growing season, and evapotranspiration changes in the central Appalachian Mountains. <em>Science of The Total Environment,</em> 650, 1371–1381.<br><a href="https://www.sciencedirect.com/science/article/abs/pii/S004896971833571X" class="pub-link" target="_blank" rel="noopener">View →</a></p>
+    </li>
+    <li class="pub-item">
+      <span class="pub-num">15</span>
+      <p class="pub-body">Lee, E., and <strong>He, Y.</strong> 2018. Could the Enhanced Forests Reduce Summer Warming in Southern China? <em>Journal of Climate Research,</em> 13(4), 345–359.<br><a href="http://www.dbpia.co.kr/Journal/articleDetail?nodeId=NODE07612807" class="pub-link" target="_blank" rel="noopener">View →</a></p>
+    </li>
+    <li class="pub-item">
+      <span class="pub-num">14</span>
+      <p class="pub-body">Lee, E., <strong>He, Y.</strong>, and Park, Y-L. 2018. Effects of Climate Change on the Phenology of <em>Osmia cornifrons</em>: implications for population management. <em>Climatic Change.</em><br><a href="https://link.springer.com/article/10.1007/s10584-018-2286-z" class="pub-link" target="_blank" rel="noopener">View →</a></p>
+    </li>
+    <li class="pub-item">
+      <span class="pub-num">13</span>
+      <p class="pub-body">Song, C., <strong>He, Y.</strong>, Bo, Y., Wang, J., Ren, Z., and Yang, H. 2018. Risk Assessment and Mapping of Hand, Foot, and Mouth Disease at the County Level in Mainland China. <em>Int. J. Environ. Res. Public Health,</em> 15, 1476.<br><a href="https://www.mdpi.com/1660-4601/15/7/1476" class="pub-link" target="_blank" rel="noopener">View →</a></p>
+    </li>
+    <li class="pub-item">
+      <span class="pub-num">12</span>
+      <p class="pub-body"><strong>He, Y.</strong>, Warner, T. A., McNeil, B. E., and Lee, E. 2018. Reducing Uncertainties in Applying Remotely Sensed Land Use and Land Cover Maps in Land-Atmosphere Interaction. <em>Remote Sensing,</em> 10, 506.<br><a href="https://www.mdpi.com/2072-4292/10/4/506" class="pub-link" target="_blank" rel="noopener">View →</a></p>
+    </li>
+    <li class="pub-item">
+      <span class="pub-num">11</span>
+      <p class="pub-body">Lee, E., <strong>He, Y.</strong>, and Shanmugasundaram, J. 2017. "Geography of Monsoons." In <em>Oxford Bibliographies in Geography.</em> New York: Oxford University Press.<br><a href="https://www.oxfordbibliographies.com/view/document/obo-9780199874002/obo-9780199874002-0175.xml" class="pub-link" target="_blank" rel="noopener">View →</a></p>
+    </li>
+    <li class="pub-item">
+      <span class="pub-num">10</span>
+      <p class="pub-body"><strong>He, Y.</strong>, Lee, E., and Warner, T. A. 2017. A time-series of annual land use and land cover maps of China from 1982 to 2013 generated using AVHRR GIMMS NDVI3g data. <em>Remote Sensing of Environment,</em> 199, 201–217.<br><a href="https://www.sciencedirect.com/science/article/abs/pii/S0034425717303255" class="pub-link" target="_blank" rel="noopener">View →</a></p>
+    </li>
+    <li class="pub-item">
+      <span class="pub-num">9</span>
+      <p class="pub-body"><strong>He, Y.</strong> and Lee, E. 2016. Empirical relationships of sea surface temperature and vegetation activity with summer rainfall variability over the Sahel. <em>Earth Interactions,</em> 20(6), 1–18.<br><a href="https://journals.ametsoc.org/view/journals/eint/20/6/ei-d-15-0028.1.xml" class="pub-link" target="_blank" rel="noopener">View →</a></p>
+    </li>
+    <li class="pub-item">
+      <span class="pub-num">8</span>
+      <p class="pub-body"><strong>He, Y.</strong>, Bo, Y., Chai, L., Liu, X., and Li, A. 2016. Linking in situ LAI and fine resolution remote sensing data to map reference LAI over cropland and grassland using geostatistical method. <em>International Journal of Applied Earth Observation and Geoinformation,</em> 50, 26–38.<br><a href="https://www.sciencedirect.com/science/article/abs/pii/S0303243416300216" class="pub-link" target="_blank" rel="noopener">View →</a></p>
+    </li>
+    <li class="pub-item">
+      <span class="pub-num">7</span>
+      <p class="pub-body">Ahn, J. J., Son, Y., <strong>He, Y.</strong>, Lee, E., and Park, Y-L. 2016. Effects of Temperature on Development and Voltinism of <em>Chaetodactylus krombeini</em>: Implications for Climate Change Impacts. <em>PLoS ONE,</em> 11(8), e0161319.<br><a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0161319" class="pub-link" target="_blank" rel="noopener">View →</a></p>
+    </li>
+    <li class="pub-item">
+      <span class="pub-num">6</span>
+      <p class="pub-body"><strong>He, Y.</strong>, Bo, Y., de Jong, R., Li, A., Zhu, Y., and Cheng, J. 2015. Comparison of vegetation phenological metrics extracted from GIMMS NDVIg and MERIS MTCI datasets over China. <em>International Journal of Remote Sensing,</em> 36(1), 300–317.<br><a href="https://www.tandfonline.com/doi/abs/10.1080/01431161.2014.994719" class="pub-link" target="_blank" rel="noopener">View →</a></p>
+    </li>
+    <li class="pub-item">
+      <span class="pub-num">5</span>
+      <p class="pub-body">Lee, E., <strong>He, Y.</strong>, Zhou, M., and Liang, J. 2015. Potential feedback of recent vegetation changes on summer rainfall in the Sahel. <em>Physical Geography,</em> 36(6), 449–470.<br><a href="https://www.tandfonline.com/doi/abs/10.1080/02723646.2015.1120139" class="pub-link" target="_blank" rel="noopener">View →</a></p>
+    </li>
+    <li class="pub-item">
+      <span class="pub-num">4</span>
+      <p class="pub-body">Zhu, Y., Kang, E., Bo, Y., Tang, Q., Cheng, J., and <strong>He, Y.</strong> 2015. A Robust Fixed Rank Kriging Method for Improving the Spatial Completeness and Accuracy of Satellite SST Products. <em>IEEE Transactions on Geoscience and Remote Sensing,</em> 53(9), 5021–5035.<br><a href="https://ieeexplore.ieee.org/document/7088609" class="pub-link" target="_blank" rel="noopener">View →</a></p>
+    </li>
+    <li class="pub-item">
+      <span class="pub-num">3</span>
+      <p class="pub-body">Liu, X., Bo, Y., Zhang, J., and <strong>He, Y.</strong> 2015. Classification of C3 and C4 Vegetation Types Using MODIS and ETM+ Blended High Spatio-Temporal Resolution Data. <em>Remote Sensing,</em> 7(11), 15244–15268.<br><a href="https://www.mdpi.com/2072-4292/7/11/15244" class="pub-link" target="_blank" rel="noopener">View →</a></p>
+    </li>
+    <li class="pub-item">
+      <span class="pub-num">2</span>
+      <p class="pub-body">Zheng, L., Bo, Y., and <strong>He, Y.</strong> 2015. Comparison of natural vegetation phenology developed from MODIS, CYCLOPES, and GLASS LAI data. <em>Remote Sensing Technology and Application,</em> 30(6), 1103–1112. (Chinese with English abstract)</p>
+    </li>
+    <li class="pub-item">
+      <span class="pub-num">1</span>
+      <p class="pub-body">Li, A., Bo, Y., Zhu, Y., Guo, P., Bi, J., and <strong>He, Y.</strong> 2013. Blending multi-resolution satellite sea surface temperature products using Bayesian maximum entropy method. <em>Remote Sensing of Environment,</em> 135, 52–63.<br><a href="https://www.sciencedirect.com/science/article/abs/pii/S0034425713001004" class="pub-link" target="_blank" rel="noopener">View →</a></p>
+    </li>
+  </ul>
+</section>
 
-    
-    
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        CommonHTML: { linebreaks: { automatic: true } },
-        tex2jax: { inlineMath: [ ['$', '$'], ['\\(','\\)'] ], displayMath: [ ['$$','$$'], ['\\[', '\\]'] ], processEscapes: false },
-        TeX: { noUndefined: { attributes: { mathcolor: 'red', mathbackground: '#FFEEEE', mathsize: '90%' } } },
-        messageStyle: 'none'
-      });
-    </script>
-    
-
-    
-    
-    
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha512-+NqPlbbtM1QqiK8ZAo4Yrj2c4lNQoGv8P79DPtKzj++l5jnN39rHA/xsqn8zE9l0uSoxaCdrOgFs6yjyfbBxSg==" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha256-VsEqElsCHSGmnmHXGQzvoWjWwoznFSZc6hs7ARLRacQ=" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
-
-      
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
-        
-      
-
-      
-      
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML-full" integrity="sha256-GhM+5JHb6QUzOQPXSJLEWP7R73CbkisjzK5Eyij4U9w=" crossorigin="anonymous" async></script>
-      
-    
-
-    <script src="/js/hugo-academic.js"></script>
-    
-
-    
-    
-
-    
-    
-    
-
-    
-    
-    <script>hljs.initHighlightingOnLoad();</script>
-    
-
-    
-    
-    <script>
-      const search_index_filename = "/index.json";
-      const i18n = {
-        'placeholder': "Search...",
-        'results': "Search Results",
-        'no_results': "No results found"
-      };
-      const content_type = {
-        'post': "Posts",
-        'project': "Projects",
-        'publication' : "Publications",
-        'talk' : "Talks"
-        };
-    </script>
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-    
-
-  </body>
+<footer>
+  <p>© Yaqian He · Geospatial and Environmental Modeling Group · Indiana University Bloomington</p>
+  <p style="margin-top:0.4rem"><a href="index.html">← Back to home</a></p>
+</footer>
+</body>
 </html>
-
-
-
