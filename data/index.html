@@ -1,436 +1,195 @@
-
-
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data — Yaqian He</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --forest: #1a3d2b; --forest-mid: #2e6044; --moss: #4a7c59; --sage: #7aab8a;
+    --cream: #f7f4ef; --warm-white: #fdfcfa; --ink: #1c1c1a; --ink-mid: #3d3d38;
+    --ink-light: #6b6b64; --rule: #d9d5cc; --accent: #c87941; --accent-light: #f0e8dd;
+  }
+  html { font-size: 16px; scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--warm-white); color: var(--ink); line-height: 1.6; }
+  nav { position: sticky; top: 0; z-index: 100; background: var(--warm-white); border-bottom: 1px solid var(--rule); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px; }
+  .nav-brand { font-family: 'EB Garamond', serif; font-size: 1.1rem; color: var(--forest); text-decoration: none; }
+  .nav-links { display: flex; list-style: none; }
+  .nav-links a { display: block; padding: 0.35rem 0.85rem; font-size: 0.82rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink-mid); text-decoration: none; border-radius: 4px; transition: color 0.15s, background 0.15s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--forest); background: var(--accent-light); }
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 2.4.0">
-  <meta name="generator" content="Hugo 0.49" />
-  <meta name="author" content="Yaqian He">
+  .page-header { max-width: 960px; margin: 0 auto; padding: 3.5rem 2rem 2.5rem; border-bottom: 1px solid var(--rule); }
+  .page-eyebrow { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--moss); margin-bottom: 0.5rem; }
+  .page-title { font-family: 'EB Garamond', serif; font-size: 2.6rem; font-weight: 400; color: var(--forest); margin-bottom: 0.5rem; }
+  .page-intro { font-size: 0.95rem; color: var(--ink-light); max-width: 56ch; margin-top: 0.75rem; line-height: 1.7; }
 
-  
-  
-  
-  
-    
-  
-  <meta name="description" content="Assistant Professor, Geography">
+  .section { max-width: 960px; margin: 0 auto; padding: 3rem 2rem; }
+  .section + .section { border-top: 1px solid var(--rule); }
 
-  
-  <link rel="alternate" hreflang="en-us" href="https://yaqianhe.github.io/">
+  /* Dataset cards */
+  .dataset-card {
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+  }
+  .dataset-card:last-child { margin-bottom: 0; }
+  .dataset-header {
+    padding: 1.5rem 1.75rem;
+    background: var(--cream);
+    border-bottom: 1px solid var(--rule);
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .dataset-num {
+    font-family: 'EB Garamond', serif;
+    font-size: 2rem;
+    color: var(--rule);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  .dataset-meta { flex: 1; }
+  .dataset-region {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--moss);
+    margin-bottom: 0.3rem;
+  }
+  .dataset-title {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--forest);
+  }
+  .dataset-body { padding: 1.5rem 1.75rem; }
+  .dataset-desc {
+    font-size: 0.92rem;
+    color: var(--ink-mid);
+    line-height: 1.75;
+    margin-bottom: 1.25rem;
+  }
+  .dataset-embed {
+    width: 100%;
+    border: none;
+    border-radius: 2px;
+    display: block;
+    background: var(--cream);
+    min-height: 200px;
+  }
+  .dataset-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.55rem 1.2rem;
+    background: var(--forest);
+    color: #fff;
+    font-size: 0.83rem;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background 0.15s;
+    margin-top: 0.25rem;
+  }
+  .dataset-link:hover { background: var(--forest-mid); }
 
-  
+  footer { border-top: 1px solid var(--rule); padding: 2rem; text-align: center; font-size: 0.8rem; color: var(--ink-light); }
+  footer a { color: var(--moss); text-decoration: none; }
 
-
-  
-
-  
-
-  
-
-  
-  
-  
-  <meta name="theme-color" content="#EF525B">
-  
-
-  
-  
-  
-  
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
-
-    
-    
-    
-    
-      
-      
-        
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" crossorigin="anonymous">
-        
-      
-    
-
-    
-
-    
-
-  
-
-  
-  
-  <link rel="stylesheet" href=//fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono>
-  
-
-  <link rel="stylesheet" href="/styles.css">
-  
-
-  
-  
-    <script>
-      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-      ga('create', 'UA-132320758-1', 'auto');
-      
-      ga('require', 'eventTracker');
-      ga('require', 'outboundLinkTracker');
-      ga('require', 'urlChangeTracker');
-      ga('send', 'pageview');
-    </script>
-    <script async src="//www.google-analytics.com/analytics.js"></script>
-    
-    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
-    
-  
-  
-
-  
-  <link rel="alternate" href="https://yaqianhe.github.io/index.xml" type="application/rss+xml" title="Yaqian He">
-  <link rel="feed" href="https://yaqianhe.github.io/index.xml" type="application/rss+xml" title="Yaqian He">
-  
-
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="icon" type="image/png" href="/img/icon.png">
-  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
-
-  <link rel="canonical" href="https://yaqianhe.github.io/">
-
-  <meta property="twitter:card" content="summary_large_image">
-  
-  <meta property="og:site_name" content="Yaqian He">
-  <meta property="og:url" content="https://yaqianhe.github.io/">
-  <meta property="og:title" content="Yaqian He">
-  <meta property="og:description" content="Assistant Professor, Geography">
-  
-  
-    
-  <meta property="og:image" content="https://yaqianhe.github.io/img/icon-192.png">
-  <meta property="og:locale" content="en-us">
-  
-  
-  
-
-  
-
-  
-
-  <title>Yaqian He</title>
-
+  @media (max-width: 700px) {
+    nav { padding: 0 1rem; }
+    .nav-links a { padding: 0.3rem 0.5rem; font-size: 0.75rem; }
+    .page-header { padding: 2rem 1.25rem 1.5rem; }
+    .section { padding: 2rem 1.25rem; }
+    .dataset-header, .dataset-body { padding: 1.25rem; }
+  }
+</style>
 </head>
-<body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71" >
+<body>
 
-<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
-  <div class="container justify-content-center">
-
-    
-      <a class="navbar-brand" href="/">Geospatial and Environmental Modeling Group @ IU Bloomington</a>
-      
-      <button type="button" class="navbar-toggler" data-toggle="collapse"
-              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-        <span><i class="fas fa-bars"></i></span>
-      </button>
-      
-
-    
-    <div class="collapse navbar-collapse" id="navbar">
-
-      
-      
-      <ul class="navbar-nav ml-auto">
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link" href="/people" data-target="/people">
-            
-            <span>People</span>
-            
-          </a>
-        </li>
-
-        
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link" href="/research" data-target="/research">
-            
-            <span>Research</span>
-            
-          </a>
-        </li>
-
-        
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link" href="/publications" data-target="/publications">
-            
-            <span>Publications</span>
-            
-          </a>
-        </li>
-
-        
-    
-
-        
-
-           
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link" href="/teaching" data-target="/teaching">
-            
-            <span>Teaching</span>
-            
-          </a>
-        </li>
-
-        
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link" href="/data" data-target="/data">
-            
-            <span>Data</span>
-            
-          </a>
-        </li>
-
-        
-        
-         <li class="nav-item">
-          <a class="nav-link" href="/opportunities" data-target="/opportunities">
-            
-            <span>Opportunities</span>
-            
-          </a>
-        </li>   
-        
-        <!--
-          <li class="nav-item">
-          <a class="nav-link" href="/contact" data-target="/contact">
-            
-            <span>Contact</span>
-            
-          </a>
-        </li>         
-        //-->               
-        
-          
-        
-        
-        
-
-      
-
-        
-
-        
-      </ul>
-
-    </div>
-  </div>
+<nav>
+  <a href="index.html" class="nav-brand">Geospatial & Environmental Modeling Group</a>
+  <ul class="nav-links">
+    <li><a href="research.html">Research</a></li>
+    <li><a href="publications.html">Publications</a></li>
+    <li><a href="people.html">People</a></li>
+    <li><a href="teaching.html">Teaching</a></li>
+    <li><a href="data.html" class="active">Data</a></li>
+    <li><a href="opportunities.html">Opportunities</a></li>
+  </ul>
 </nav>
 
+<header class="page-header">
+  <p class="page-eyebrow">Open datasets</p>
+  <h1 class="page-title">Data</h1>
+  <p class="page-intro">Datasets produced by the group are freely available for research and educational use. Please cite the associated publications when using these products.</p>
+</header>
 
+<section class="section">
 
-
-
-
-
-
-
-
-
-
-
-
-<div class="universal-wrapper">
-<h2 id="Data">Data</h2>
-
-<hr />
-
-<p>2: Land cover and land use maps for Indo-Malaysian Region from 1982 to 2015 are available. If you are interested, please find the data at:</p>
-
-<iframe src="https://widgets.figshare.com/articles/29133797/embed?show_title=1" width="568" height="351" allowfullscreen frameborder="0"></iframe>
-
-<p>1: Land cover and land use maps for China from 1982 to 2013 are available. If you are interested, please find the data at:</p>
-
-<iframe src="https://widgets.figshare.com/articles/29133461/embed?show_title=1" width="568" height="351" allowfullscreen frameborder="0"></iframe>
-
-<hr />
-</div>
-  
-
-  
-  
-
-  
-
-</div>
-<div class="container">
-  <footer class="site-footer">
-  
-
-  <p class="powered-by">
-    Yaqian He &middot; 
-
-    (made with <a href="https://georgecushen.com/create-your-website-with-hugo/" target="_blank">hugo academic</a>)
-
-  </p>
-</footer>
-
-
-</div>
-
-
-<div id="modal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Cite</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <pre><code class="tex hljs"></code></pre>
-      </div>
-      <div class="modal-footer">
-        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
-          <i class="fas fa-copy"></i> Copy
-        </a>
-        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
-          <i class="fas fa-download"></i> Download
-        </a>
-        <div id="modal-error"></div>
+  <!-- Dataset 2 -->
+  <div class="dataset-card">
+    <div class="dataset-header">
+      <span class="dataset-num">02</span>
+      <div class="dataset-meta">
+        <p class="dataset-region">Indo-Malaysian Region · 1982–2015</p>
+        <h2 class="dataset-title">Land Cover and Land Use Maps — Indo-Malaysian Region</h2>
       </div>
     </div>
+    <div class="dataset-body">
+      <p class="dataset-desc">Annual land cover and land use maps for the Indo-Malaysian region from 1982 to 2015, derived from AVHRR NDVI data.</p>
+      <iframe
+        src="https://widgets.figshare.com/articles/29133797/embed?show_title=1"
+        class="dataset-embed"
+        height="220"
+        allowfullscreen
+        title="Indo-Malaysian LCLUC Dataset">
+      </iframe>
+      <br>
+      <a href="https://figshare.com/articles/29133797" class="dataset-link" target="_blank" rel="noopener">
+        View on Figshare →
+      </a>
+    </div>
   </div>
-</div>
 
+  <!-- Dataset 1 -->
+  <div class="dataset-card">
+    <div class="dataset-header">
+      <span class="dataset-num">01</span>
+      <div class="dataset-meta">
+        <p class="dataset-region">China · 1982–2013</p>
+        <h2 class="dataset-title">Land Cover and Land Use Maps — China</h2>
+      </div>
+    </div>
+    <div class="dataset-body">
+      <p class="dataset-desc">A time series of annual land use and land cover maps of China from 1982 to 2013, generated using AVHRR GIMMS NDVI3g data. </p>
+      <iframe
+        src="https://widgets.figshare.com/articles/29133461/embed?show_title=1"
+        class="dataset-embed"
+        height="220"
+        allowfullscreen
+        title="China LCLUC Dataset">
+      </iframe>
+      <br>
+      <a href="https://figshare.com/articles/29133461" class="dataset-link" target="_blank" rel="noopener">
+        View on Figshare →
+      </a>
+    </div>
+  </div>
 
-    
+</section>
 
-    
-    
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        CommonHTML: { linebreaks: { automatic: true } },
-        tex2jax: { inlineMath: [ ['$', '$'], ['\\(','\\)'] ], displayMath: [ ['$$','$$'], ['\\[', '\\]'] ], processEscapes: false },
-        TeX: { noUndefined: { attributes: { mathcolor: 'red', mathbackground: '#FFEEEE', mathsize: '90%' } } },
-        messageStyle: 'none'
-      });
-    </script>
-    
+<footer>
+  <p>© Yaqian He · Geospatial and Environmental Modeling Group · Indiana University Bloomington</p>
+  <p style="margin-top:0.4rem"><a href="index.html">← Back to home</a></p>
+</footer>
 
-    
-    
-    
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha512-+NqPlbbtM1QqiK8ZAo4Yrj2c4lNQoGv8P79DPtKzj++l5jnN39rHA/xsqn8zE9l0uSoxaCdrOgFs6yjyfbBxSg==" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha256-VsEqElsCHSGmnmHXGQzvoWjWwoznFSZc6hs7ARLRacQ=" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
-
-      
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
-        
-      
-
-      
-      
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML-full" integrity="sha256-GhM+5JHb6QUzOQPXSJLEWP7R73CbkisjzK5Eyij4U9w=" crossorigin="anonymous" async></script>
-      
-    
-
-    <script src="/js/hugo-academic.js"></script>
-    
-
-    
-    
-
-    
-    
-    
-
-    
-    
-    <script>hljs.initHighlightingOnLoad();</script>
-    
-
-    
-    
-    <script>
-      const search_index_filename = "/index.json";
-      const i18n = {
-        'placeholder': "Search...",
-        'results': "Search Results",
-        'no_results': "No results found"
-      };
-      const content_type = {
-        'post': "Posts",
-        'project': "Projects",
-        'publication' : "Publications",
-        'talk' : "Talks"
-        };
-    </script>
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-    
-
-  </body>
+</body>
 </html>
-
-
-
