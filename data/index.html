@@ -3,579 +3,193 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yaqian He — Geospatial & Environmental Modeling</title>
-<meta name="description" content="Assistant Professor, Geography — Indiana University Bloomington. Geospatial and Environmental Modeling Group.">
+<title>Data — Yaqian He</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   :root {
-    --forest: #1a3d2b;
-    --forest-mid: #2e6044;
-    --moss: #4a7c59;
-    --sage: #7aab8a;
-    --cream: #f7f4ef;
-    --warm-white: #fdfcfa;
-    --ink: #1c1c1a;
-    --ink-mid: #3d3d38;
-    --ink-light: #6b6b64;
-    --rule: #d9d5cc;
-    --accent: #c87941;
-    --accent-light: #f0e8dd;
+    --forest: #1a3d2b; --forest-mid: #2e6044; --moss: #4a7c59; --sage: #7aab8a;
+    --cream: #f7f4ef; --warm-white: #fdfcfa; --ink: #1c1c1a; --ink-mid: #3d3d38;
+    --ink-light: #6b6b64; --rule: #d9d5cc; --accent: #c87941; --accent-light: #f0e8dd;
   }
-
   html { font-size: 16px; scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--warm-white); color: var(--ink); line-height: 1.6; }
+  nav { position: sticky; top: 0; z-index: 100; background: var(--warm-white); border-bottom: 1px solid var(--rule); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px; }
+  .nav-brand { font-family: 'EB Garamond', serif; font-size: 1.1rem; color: var(--forest); text-decoration: none; }
+  .nav-links { display: flex; list-style: none; }
+  .nav-links a { display: block; padding: 0.35rem 0.85rem; font-size: 0.82rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink-mid); text-decoration: none; border-radius: 4px; transition: color 0.15s, background 0.15s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--forest); background: var(--accent-light); }
 
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--warm-white);
-    color: var(--ink);
-    line-height: 1.6;
+  .page-header { max-width: 960px; margin: 0 auto; padding: 3.5rem 2rem 2.5rem; border-bottom: 1px solid var(--rule); }
+  .page-eyebrow { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--moss); margin-bottom: 0.5rem; }
+  .page-title { font-family: 'EB Garamond', serif; font-size: 2.6rem; font-weight: 400; color: var(--forest); margin-bottom: 0.5rem; }
+  .page-intro { font-size: 0.95rem; color: var(--ink-light); max-width: 56ch; margin-top: 0.75rem; line-height: 1.7; }
+
+  .section { max-width: 960px; margin: 0 auto; padding: 3rem 2rem; }
+  .section + .section { border-top: 1px solid var(--rule); }
+
+  /* Dataset cards */
+  .dataset-card {
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 2rem;
   }
-
-  /* ─── NAVIGATION ─── */
-  nav {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background: var(--warm-white);
+  .dataset-card:last-child { margin-bottom: 0; }
+  .dataset-header {
+    padding: 1.5rem 1.75rem;
+    background: var(--cream);
     border-bottom: 1px solid var(--rule);
-    padding: 0 2rem;
     display: flex;
-    align-items: center;
+    align-items: baseline;
     justify-content: space-between;
-    height: 56px;
-  }
-  .nav-brand {
-    font-family: 'EB Garamond', serif;
-    font-size: 1.1rem;
-    color: var(--forest);
-    text-decoration: none;
-    letter-spacing: 0.01em;
-  }
-  .nav-links {
-    display: flex;
-    gap: 0;
-    list-style: none;
-  }
-  .nav-links a {
-    display: block;
-    padding: 0.35rem 0.85rem;
-    font-size: 0.82rem;
-    font-weight: 400;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: var(--ink-mid);
-    text-decoration: none;
-    border-radius: 4px;
-    transition: color 0.15s, background 0.15s;
-  }
-  .nav-links a:hover { color: var(--forest); background: var(--accent-light); }
-
-  /* ─── HERO ─── */
-  .hero {
-    max-width: 680px;
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 5rem 2rem 4rem;
-    align-items: start;
-  }
-  .hero-eyebrow {
-    font-size: 0.78rem;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--moss);
-    margin-bottom: 1.25rem;
-  }
-  .hero h1 {
-    font-family: 'EB Garamond', serif;
-    font-size: 3.2rem;
-    font-weight: 400;
-    line-height: 1.1;
-    color: var(--forest);
-    margin-bottom: 0.5rem;
-  }
-  .hero-role {
-    font-size: 1rem;
-    color: var(--ink-light);
-    margin-bottom: 2rem;
-    font-weight: 300;
-  }
-  .hero-bio {
-    font-size: 1rem;
-    color: var(--ink-mid);
-    line-height: 1.75;
-    max-width: 48ch;
-    margin-bottom: 2rem;
-  }
-  .hero-links {
-    display: flex;
-    gap: 0.75rem;
+    gap: 1rem;
     flex-wrap: wrap;
   }
-  .btn-primary {
-    display: inline-block;
-    padding: 0.6rem 1.4rem;
-    background: var(--forest);
-    color: #fff;
-    font-size: 0.85rem;
-    font-weight: 500;
-    text-decoration: none;
-    border-radius: 4px;
-    transition: background 0.15s;
-  }
-  .btn-primary:hover { background: var(--forest-mid); }
-  .btn-outline {
-    display: inline-block;
-    padding: 0.6rem 1.4rem;
-    border: 1px solid var(--rule);
-    color: var(--ink-mid);
-    font-size: 0.85rem;
-    text-decoration: none;
-    border-radius: 4px;
-    transition: border-color 0.15s, color 0.15s;
-  }
-  .btn-outline:hover { border-color: var(--moss); color: var(--forest); }
-
-  /* photo placeholder */
-  .hero-photo {
-    width: 100%;
-    aspect-ratio: 3/4;
-    background: linear-gradient(160deg, #c8dcd1 0%, #a4c2ae 100%);
-    border-radius: 2px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    position: relative;
-  }
-  .hero-photo-monogram {
+  .dataset-num {
     font-family: 'EB Garamond', serif;
-    font-size: 5rem;
-    color: rgba(255,255,255,0.75);
-    user-select: none;
+    font-size: 2rem;
+    color: var(--rule);
+    line-height: 1;
+    flex-shrink: 0;
   }
-  .hero-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
-
-  /* ─── RESEARCH THEMES ─── */
-  .section {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 3.5rem 2rem;
-    border-top: 1px solid var(--rule);
-  }
-  .section-label {
-    font-size: 0.75rem;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--moss);
-    margin-bottom: 0.6rem;
-  }
-  .section-title {
-    font-family: 'EB Garamond', serif;
-    font-size: 1.9rem;
-    font-weight: 400;
-    color: var(--forest);
-    margin-bottom: 2rem;
-  }
-
-  .research-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.25rem;
-  }
-  .research-card {
-    background: var(--cream);
-    border-radius: 2px;
-    padding: 1.4rem 1.2rem;
-    border-left: 3px solid var(--moss);
-  }
-  .research-card h3 {
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: var(--forest);
-    margin-bottom: 0.5rem;
-    line-height: 1.35;
-  }
-  .research-card p {
-    font-size: 0.83rem;
-    color: var(--ink-light);
-    line-height: 1.6;
-  }
-
-  /* ─── NEWS ─── */
-  .news-list { list-style: none; }
-  .news-item {
-    display: grid;
-    grid-template-columns: 80px 1fr;
-    gap: 1.25rem;
-    padding: 1rem 0;
-    border-bottom: 1px solid var(--rule);
-    align-items: baseline;
-  }
-  .news-item:last-child { border-bottom: none; }
-  .news-date {
-    font-size: 0.78rem;
-    color: var(--ink-light);
-    font-variant-numeric: tabular-nums;
-    white-space: nowrap;
-    padding-top: 0.05rem;
-  }
-  .news-text {
-    font-size: 0.9rem;
-    color: var(--ink-mid);
-    line-height: 1.6;
-  }
-  .news-text strong { color: var(--ink); font-weight: 500; }
-  .news-text a {
-    color: var(--moss);
-    text-decoration: none;
-    border-bottom: 1px solid var(--sage);
-    transition: color 0.1s;
-  }
-  .news-text a:hover { color: var(--forest); }
-
-  .news-tag {
-    display: inline-block;
-    font-size: 0.7rem;
-    font-weight: 500;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    padding: 0.15rem 0.5rem;
-    border-radius: 2px;
-    margin-right: 0.4rem;
-    vertical-align: middle;
-  }
-  .tag-pub { background: var(--accent-light); color: var(--accent); }
-  .tag-grant { background: #dceee3; color: var(--forest-mid); }
-  .tag-conf { background: #e8edf7; color: #3a538a; }
-  .tag-news { background: #f3edf7; color: #6a3d8a; }
-
-  /* year divider */
-  .year-divider {
-    font-family: 'EB Garamond', serif;
-    font-size: 1.3rem;
-    color: var(--ink-light);
-    padding: 1.5rem 0 0.5rem;
-    border-bottom: 1px solid var(--rule);
-  }
-
-  /* show/hide archived */
-  #archived-news { display: none; }
-  #archived-news.open { display: block; }
-  .toggle-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    margin-top: 1.5rem;
-    padding: 0.5rem 1rem;
-    border: 1px solid var(--rule);
-    background: none;
-    font: inherit;
-    font-size: 0.82rem;
-    color: var(--ink-mid);
-    cursor: pointer;
-    border-radius: 4px;
-    transition: background 0.15s, color 0.15s;
-  }
-  .toggle-btn:hover { background: var(--cream); color: var(--forest); }
-  .toggle-btn svg { transition: transform 0.2s; }
-  .toggle-btn.open svg { transform: rotate(180deg); }
-
-  /* ─── SPECIAL ISSUES ─── */
-  .special-issue-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.25rem;
-    margin-top: 1.5rem;
-  }
-  .si-card {
-    border: 1px solid var(--rule);
-    border-radius: 2px;
-    padding: 1.3rem;
-    background: var(--warm-white);
-  }
-  .si-journal {
+  .dataset-meta { flex: 1; }
+  .dataset-region {
     font-size: 0.72rem;
     font-weight: 500;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--moss);
-    margin-bottom: 0.45rem;
+    margin-bottom: 0.3rem;
   }
-  .si-card h3 { font-size: 0.92rem; color: var(--ink); margin-bottom: 0.7rem; line-height: 1.4; }
-  .si-card a { color: var(--moss); font-size: 0.82rem; text-decoration: none; border-bottom: 1px solid var(--sage); }
-  .si-card a:hover { color: var(--forest); }
+  .dataset-title {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--forest);
+  }
+  .dataset-body { padding: 1.5rem 1.75rem; }
+  .dataset-desc {
+    font-size: 0.92rem;
+    color: var(--ink-mid);
+    line-height: 1.75;
+    margin-bottom: 1.25rem;
+  }
+  .dataset-embed {
+    width: 100%;
+    border: none;
+    border-radius: 2px;
+    display: block;
+    background: var(--cream);
+    min-height: 200px;
+  }
+  .dataset-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.55rem 1.2rem;
+    background: var(--forest);
+    color: #fff;
+    font-size: 0.83rem;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background 0.15s;
+    margin-top: 0.25rem;
+  }
+  .dataset-link:hover { background: var(--forest-mid); }
 
-  /* ─── FOOTER ─── */
-  footer {
-    border-top: 1px solid var(--rule);
-    padding: 2rem;
-    text-align: center;
-    font-size: 0.8rem;
-    color: var(--ink-light);
-  }
+  footer { border-top: 1px solid var(--rule); padding: 2rem; text-align: center; font-size: 0.8rem; color: var(--ink-light); }
   footer a { color: var(--moss); text-decoration: none; }
 
-  /* ─── RESPONSIVE ─── */
   @media (max-width: 700px) {
-    .hero { grid-template-columns: 1fr; gap: 2rem; padding-top: 2.5rem; }
-    .hero-photo { max-width: 200px; aspect-ratio: 1/1; }
-    .hero h1 { font-size: 2.4rem; }
     nav { padding: 0 1rem; }
-    .nav-links { gap: 0; }
     .nav-links a { padding: 0.3rem 0.5rem; font-size: 0.75rem; }
-    .section { padding: 2.5rem 1.25rem; }
+    .page-header { padding: 2rem 1.25rem 1.5rem; }
+    .section { padding: 2rem 1.25rem; }
+    .dataset-header, .dataset-body { padding: 1.25rem; }
   }
 </style>
 </head>
 <body>
 
-<!-- NAVIGATION -->
 <nav>
-  <a href="#" class="nav-brand">Geospatial & Environmental Modeling Group</a>
+  <a href="/" class="nav-brand">Geospatial & Environmental Modeling Group</a>
   <ul class="nav-links">
-    <li><a href="research.html">Research</a></li>
-    <li><a href="publications.html">Publications</a></li>
-    <li><a href="people.html">People</a></li>
-    <li><a href="teaching.html">Teaching</a></li>
-    <li><a href="data.html">Data</a></li>
-    <li><a href="opportunities.html">Opportunities</a></li>
+    <li><a href="/research/">Research</a></li>
+    <li><a href="/publications/">Publications</a></li>
+    <li><a href="/people/">People</a></li>
+    <li><a href="/teaching/">Teaching</a></li>
+    <li><a href="/data/" class="active">Data</a></li>
+    <li><a href="/opportunities/">Opportunities</a></li>
   </ul>
 </nav>
 
-<!-- HERO -->
-<header class="hero">
-  <div>
-    <p class="hero-eyebrow">IU Bloomington · Department of Geography</p>
-    <p class="hero-bio">
-      Our group works to better understand the interactions of human, land, and climate systems — combining remote sensing, GIS, statistical methods, machine learning, and Earth system models to advance environmental science.
-    </p>
-    <div class="hero-links">
-      <a href="https://yaqianhe.github.io/publications" class="btn-primary">Publications</a>
-      <a href="https://yaqianhe.github.io/people" class="btn-outline">Meet the Group</a>
-      <a href="https://yaqianhe.github.io/opportunities" class="btn-outline">Join Us</a>
-    </div>
-  </div>
-
+<header class="page-header">
+  <p class="page-eyebrow">Open datasets</p>
+  <h1 class="page-title">Data</h1>
+  <p class="page-intro">Datasets produced by the group are freely available for research and educational use. Please cite the associated publications when using these products.</p>
 </header>
 
-
-
-<!-- SPECIAL ISSUES -->
 <section class="section">
-  <p class="section-label">Open calls</p>
-  <h2 class="section-title">Special issues</h2>
-  <div class="special-issue-grid">
-    <div class="si-card">
-      <p class="si-journal">Remote Sensing</p>
-      <h3>Remote Sensing and GIScience for Natural Hazard Mitigation and Resilience</h3>
-      <a href="https://www.mdpi.com/journal/remotesensing/special_issues/650HNLYPRG" target="_blank" rel="noopener">Submit your work →</a>
+
+  <!-- Dataset 2 -->
+  <div class="dataset-card">
+    <div class="dataset-header">
+      <span class="dataset-num">02</span>
+      <div class="dataset-meta">
+        <p class="dataset-region">Indo-Malaysian Region · 1982–2015</p>
+        <h2 class="dataset-title">Land Cover and Land Use Maps — Indo-Malaysian Region</h2>
+      </div>
     </div>
-    <div class="si-card">
-      <p class="si-journal">Atmosphere</p>
-      <h3>Land–Atmosphere Interactions</h3>
-      <a href="https://www.mdpi.com/journal/atmosphere/special_issues/102M374X64" target="_blank" rel="noopener">Submit your work →</a>
+    <div class="dataset-body">
+      <p class="dataset-desc">Annual land cover and land use maps for the Indo-Malaysian region from 1982 to 2015, derived from AVHRR NDVI data.</p>
+      <iframe
+        src="https://widgets.figshare.com/articles/29133797/embed?show_title=1"
+        class="dataset-embed"
+        height="220"
+        allowfullscreen
+        title="Indo-Malaysian LCLUC Dataset">
+      </iframe>
+      <br>
+      <a href="https://figshare.com/articles/29133797" class="dataset-link" target="_blank" rel="noopener">
+        View on Figshare →
+      </a>
     </div>
   </div>
-</section>
 
-<!-- NEWS -->
-<section class="section" id="news">
-  <p class="section-label">Lab updates</p>
-  <h2 class="section-title">What's new</h2>
-
-  <!-- Upcoming -->
-  <p class="year-divider">Upcoming</p>
-  <ul class="news-list">
-    <li class="news-item">
-      <span class="news-date">Nov 2025</span>
-      <span class="news-text"><span class="news-tag tag-conf">Conference</span> He et al will present "Intercomparison of NASA GLOBE Land Cover Data with Satellite-derived Products" at the annual meeting of Southeastern AAG, Lexington, KY.</span>
-    </li>
-  </ul>
-
-  <!-- 2025 -->
-  <p class="year-divider">2025</p>
-  <ul class="news-list">
-    <li class="news-item">
-      <span class="news-date">Nov 15</span>
-      <span class="news-text"><span class="news-tag tag-pub">Publication</span> New book on <strong>supervised learning and remote sensing</strong> published. <a href="https://doi.org/10.1016/C2023-0-01427-3" target="_blank" rel="noopener">View →</a></span>
-    </li>
-    <li class="news-item">
-      <span class="news-date">Nov 15</span>
-      <span class="news-text"><span class="news-tag tag-pub">Publication</span> New study on <strong>soybean phenology in the Arkansas Delta region</strong>. <a href="https://www.tandfonline.com/doi/abs/10.1080/23754931.2025.2586545" target="_blank" rel="noopener">View →</a></span>
-    </li>
-    <li class="news-item">
-      <span class="news-date">Oct 23</span>
-      <span class="news-text"><span class="news-tag tag-conf">Conference</span> He et al attended Applied Geography annual meeting in St. Louis, MO and presented research on NASA GLOBE land cover intercomparison.</span>
-    </li>
-    <li class="news-item">
-      <span class="news-date">Aug 31</span>
-      <span class="news-text"><span class="news-tag tag-pub">Publication</span> New study on <strong>LCLUC impacts on temperature extremes in China</strong>. <a href="https://link.springer.com/chapter/10.1007/978-3-031-98048-0_12." target="_blank" rel="noopener">View →</a></span>
-    </li>
-    <li class="news-item">
-      <span class="news-date">Jul 3</span>
-      <span class="news-text"><span class="news-tag tag-pub">Publication</span> New study on <strong>land cover change impacts on climate extremes in the ABoVE domain</strong>. <a href="https://iopscience.iop.org/article/10.1088/1748-9326/adeba0" target="_blank" rel="noopener">View →</a></span>
-    </li>
-    <li class="news-item">
-      <span class="news-date">Jun 27</span>
-      <span class="news-text"><span class="news-tag tag-pub">Publication</span> New study on <strong>agricultural geography and international water conflict</strong>. <a href="https://academic.oup.com/isq/article/69/3/sqaf048/8176721" target="_blank" rel="noopener">View →</a></span>
-    </li>
-    <li class="news-item">
-      <span class="news-date">Jun 24</span>
-      <span class="news-text"><span class="news-tag tag-pub">Publication</span> New study on <strong>deep learning, CORONA imagery, and LCLUC classification</strong>. <a href="https://ieeexplore.ieee.org/document/11048867" target="_blank" rel="noopener">View →</a></span>
-    </li>
-    <li class="news-item">
-      <span class="news-date">May 27</span>
-      <span class="news-text"><span class="news-tag tag-conf">Conference</span> He et al attended Advancing Participatory Sciences annual meeting in Portland, OR — presenting "Multi-view citizen science: Advancing land cover and disease risk models with AI."</span>
-    </li>
-    <li class="news-item">
-      <span class="news-date">May 12</span>
-      <span class="news-text"><span class="news-tag tag-conf">Conference</span> He et al attended the NASA ABoVE annual science meeting in Fairbanks, AK — presenting biogeophysical impacts of land cover change on regional climate.</span>
-    </li>
-    <li class="news-item">
-      <span class="news-date">Apr 11</span>
-      <span class="news-text"><span class="news-tag tag-pub">Publication</span> New study on <strong>spatiotemporal disparities in maternal mortality in China</strong>. <a href="https://www.frontiersin.org/journals/public-health/articles/10.3389/fpubh.2025.1572382/full" target="_blank" rel="noopener">View →</a></span>
-    </li>
-    <li class="news-item">
-      <span class="news-date">Feb 28</span>
-      <span class="news-text"><span class="news-tag tag-news">Award</span> Congratulations to <strong>Seth</strong> on being selected for the NOAA William M. Lapenta NWS Student Internship Program (June–August 2025).</span>
-    </li>
-  </ul>
-
-  <!-- Archived (collapsed) -->
-  <div id="archived-news">
-    <p class="year-divider">2024</p>
-    <ul class="news-list">
-      <li class="news-item"><span class="news-date">—</span><span class="news-text">No individually dated entries recorded for 2024.</span></li>
-    </ul>
-
-    <p class="year-divider">2023</p>
-    <ul class="news-list">
-      <li class="news-item">
-        <span class="news-date">Oct 19</span>
-        <span class="news-text"><span class="news-tag tag-conf">Conference</span> He et al presented "A Comprehensive Evaluation of Near-Real Time Prediction Algorithms for Climate Extremes in Arkansas" at the Arkansas GIS Users Forum.</span>
-      </li>
-      <li class="news-item">
-        <span class="news-date">Jun 26</span>
-        <span class="news-text"><span class="news-tag tag-pub">Publication</span> New study on <strong>land cover and land use change impacts on biomass carbon emission</strong> in Biogeochemistry. <a href="https://link.springer.com/article/10.1007/s10533-023-01042-x" target="_blank" rel="noopener">View →</a></span>
-      </li>
-      <li class="news-item">
-        <span class="news-date">Jun 24</span>
-        <span class="news-text"><span class="news-tag tag-grant">Grant</span> NASA EPSCoR R3 Grant received to quantify effects of land cover change–climate interactions on ecosystem productivity in Northwestern US (with Dr. Di Yang, Co-PI).</span>
-      </li>
-      <li class="news-item">
-        <span class="news-date">Apr 11</span>
-        <span class="news-text"><span class="news-tag tag-pub">Publication</span> New study on <strong>irrigation–climate interaction impacts on crop yield</strong> in Progress in Physical Geography. <a href="https://journals.sagepub.com/doi/10.1177/03091333231169443" target="_blank" rel="noopener">View →</a></span>
-      </li>
-    </ul>
-
-    <p class="year-divider">2022</p>
-    <ul class="news-list">
-      <li class="news-item">
-        <span class="news-date">Dec 19</span>
-        <span class="news-text"><span class="news-tag tag-grant">Grant</span> NASA EPSCoR RID Grant received to predict near real-time climate extremes using machine learning (with Dr. Miaoqing Huang, PI and Dr. Xiao Liu, Co-PI).</span>
-      </li>
-      <li class="news-item">
-        <span class="news-date">Nov 11</span>
-        <span class="news-text"><span class="news-tag tag-grant">Grant</span> NASA Arkansas Space Consortium Grant received to characterize spatiotemporal patterns of soybean phenology in the Northern Arkansas Delta Region (with Dr. Brooks Pearson, Co-PI).</span>
-      </li>
-      <li class="news-item">
-        <span class="news-date">Jul 18</span>
-        <span class="news-text"><span class="news-tag tag-pub">Publication</span> New study on <strong>large-scale land cover and land use change in the Indo-Malaysian region</strong> in Annals of the AAG. <a href="https://www.tandfonline.com/doi/full/10.1080/24694452.2022.2077168" target="_blank" rel="noopener">View →</a></span>
-      </li>
-      <li class="news-item">
-        <span class="news-date">May 5</span>
-        <span class="news-text"><span class="news-tag tag-pub">Publication</span> New study on <strong>agricultural aid and forest growth in Sierra Leone</strong> in Land. <a href="https://www.mdpi.com/2073-445X/11/5/668" target="_blank" rel="noopener">View →</a></span>
-      </li>
-      <li class="news-item">
-        <span class="news-date">Mar 3</span>
-        <span class="news-text"><span class="news-tag tag-pub">Publication</span> New study on <strong>land cover and land use mapping in East Asian Summer Monsoon region</strong> in Land. <a href="https://doi.org/10.3390/land11030391" target="_blank" rel="noopener">View →</a></span>
-      </li>
-      <li class="news-item">
-        <span class="news-date">Feb 15</span>
-        <span class="news-text"><span class="news-tag tag-pub">Publication</span> New study on <strong>vegetation–climate interactions in western Tibetan Plateau</strong> in Earth Interactions. <a href="https://journals.ametsoc.org/view/journals/eint/aop/EI-D-21-0017.1/EI-D-21-0017.1.xml" target="_blank" rel="noopener">View →</a></span>
-      </li>
-    </ul>
-
-    <p class="year-divider">2021</p>
-    <ul class="news-list">
-      <li class="news-item">
-        <span class="news-date">Dec 17</span>
-        <span class="news-text"><span class="news-tag tag-grant">Grant</span> NASA Arkansas Space Consortium Grant received to guide landscape-scale restoration of fire-adapted vegetation in the Ouachita Mountains (with Dr. William Flatley, PI).</span>
-      </li>
-      <li class="news-item">
-        <span class="news-date">Oct 15</span>
-        <span class="news-text"><span class="news-tag tag-news">Award</span> Congratulations to <strong>Paul</strong> for receiving First Prize in the undergraduate paper competition in Southwest Division of AAG.</span>
-      </li>
-      <li class="news-item">
-        <span class="news-date">May 25</span>
-        <span class="news-text"><span class="news-tag tag-pub">Publication</span> New study on <strong>ammonia change patterns and driving factors</strong> in Science of the Total Environment. <a href="https://www.sciencedirect.com/science/article/abs/pii/S0048969721029703" target="_blank" rel="noopener">View →</a></span>
-      </li>
-      <li class="news-item">
-        <span class="news-date">May 6</span>
-        <span class="news-text"><span class="news-tag tag-pub">Publication</span> New study on <strong>cropland expansion and climate extremes in Western India</strong> in Land. <a href="https://www.mdpi.com/2073-445X/10/5/489" target="_blank" rel="noopener">View →</a></span>
-      </li>
-      <li class="news-item">
-        <span class="news-date">Feb 4</span>
-        <span class="news-text"><span class="news-tag tag-grant">Grant</span> NASA EPSCoR RID Grant received to quantify irrigation impacts on crop yield in Arkansas Delta (with Dr. Matthew Connolly and Dr. Xiao Huang, Co-PIs).</span>
-      </li>
-    </ul>
-
-    <p class="year-divider">2020</p>
-    <ul class="news-list">
-      <li class="news-item">
-        <span class="news-date">Dec</span>
-        <span class="news-text"><span class="news-tag tag-conf">Conference</span> He et al presented rapid land cover and land use change in the Indo-Malaysian region at AGU.</span>
-      </li>
-      <li class="news-item">
-        <span class="news-date">Nov</span>
-        <span class="news-text"><span class="news-tag tag-conf">Conference</span> He et al presented "Agricultural Aid and Deforestation in Sierra Leone" at the annual meeting of Southwestern AAG.</span>
-      </li>
-      <li class="news-item">
-        <span class="news-date">Nov 5</span>
-        <span class="news-text"><span class="news-tag tag-grant">Grant</span> UCA University Research Council Grant received to map statewide land cover and land use change in Arkansas.</span>
-      </li>
-      <li class="news-item">
-        <span class="news-date">Jun 6</span>
-        <span class="news-text"><span class="news-tag tag-pub">Publication</span> New study on <strong>climate variability and vegetation dynamics over the Upper Amur River Basin</strong> in Environmental Research Communications. <a href="https://iopscience.iop.org/article/10.1088/2515-7620/ab9525/meta" target="_blank" rel="noopener">View →</a></span>
-      </li>
-      <li class="news-item">
-        <span class="news-date">May 11</span>
-        <span class="news-text"><span class="news-tag tag-grant">Grant</span> Dartmouth Neukom Institute CompX Grant received to assess adaptation feedbacks to present and future climate extremes (with Dr. Justin Mankin, PI and Dr. Ethan Coffel, Co-PI).</span>
-      </li>
-      <li class="news-item">
-        <span class="news-date">Feb 5</span>
-        <span class="news-text"><span class="news-tag tag-conf">Invited Talk</span> Yaqian was invited to lecture on "Impacts of Land Use and Land Cover Change on Regional Climate" at the Department of Geology, University of Dayton.</span>
-      </li>
-    </ul>
+  <!-- Dataset 1 -->
+  <div class="dataset-card">
+    <div class="dataset-header">
+      <span class="dataset-num">01</span>
+      <div class="dataset-meta">
+        <p class="dataset-region">China · 1982–2013</p>
+        <h2 class="dataset-title">Land Cover and Land Use Maps — China</h2>
+      </div>
+    </div>
+    <div class="dataset-body">
+      <p class="dataset-desc">A time series of annual land use and land cover maps of China from 1982 to 2013, generated using AVHRR GIMMS NDVI3g data.</p>
+      <iframe
+        src="https://widgets.figshare.com/articles/29133461/embed?show_title=1"
+        class="dataset-embed"
+        height="220"
+        allowfullscreen
+        title="China LCLUC Dataset">
+      </iframe>
+      <br>
+      <a href="https://figshare.com/articles/29133461" class="dataset-link" target="_blank" rel="noopener">
+        View on Figshare →
+      </a>
+    </div>
   </div>
 
-  <button class="toggle-btn" id="archive-toggle" onclick="toggleArchive()">
-    Show older news
-    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-  </button>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <p>© Yaqian He · Geospatial and Environmental Modeling Group · Indiana University Bloomington</p>
-  <p style="margin-top:0.4rem"><a href="https://yaqianhe.github.io/">yaqianhe.github.io</a></p>
+  <p style="margin-top:0.4rem"><a href="/">← Back to home</a></p>
 </footer>
 
-<script>
-function toggleArchive() {
-  const box = document.getElementById('archived-news');
-  const btn = document.getElementById('archive-toggle');
-  const isOpen = box.classList.toggle('open');
-  btn.classList.toggle('open', isOpen);
-  btn.childNodes[0].textContent = isOpen ? 'Hide older news ' : 'Show older news ';
-}
-</script>
 </body>
 </html>
