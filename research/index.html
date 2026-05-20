@@ -1,448 +1,262 @@
-
-
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Research — Yaqian He</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --forest: #1a3d2b; --forest-mid: #2e6044; --moss: #4a7c59; --sage: #7aab8a;
+    --cream: #f7f4ef; --warm-white: #fdfcfa; --ink: #1c1c1a; --ink-mid: #3d3d38;
+    --ink-light: #6b6b64; --rule: #d9d5cc; --accent: #c87941; --accent-light: #f0e8dd;
+  }
+  html { font-size: 16px; scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--warm-white); color: var(--ink); line-height: 1.6; }
+  nav { position: sticky; top: 0; z-index: 100; background: var(--warm-white); border-bottom: 1px solid var(--rule); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px; }
+  .nav-brand { font-family: 'EB Garamond', serif; font-size: 1.1rem; color: var(--forest); text-decoration: none; }
+  .nav-links { display: flex; list-style: none; }
+  .nav-links a { display: block; padding: 0.35rem 0.85rem; font-size: 0.82rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink-mid); text-decoration: none; border-radius: 4px; transition: color 0.15s, background 0.15s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--forest); background: var(--accent-light); }
+  .page-header { max-width: 960px; margin: 0 auto; padding: 3.5rem 2rem 2.5rem; border-bottom: 1px solid var(--rule); }
+  .page-eyebrow { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--moss); margin-bottom: 0.5rem; }
+  .page-title { font-family: 'EB Garamond', serif; font-size: 2.6rem; font-weight: 400; color: var(--forest); }
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 2.4.0">
-  <meta name="generator" content="Hugo 0.49" />
-  <meta name="author" content="Yaqian He">
+  /* Research areas */
+  .research-area { max-width: 960px; margin: 0 auto; padding: 3rem 2rem; border-bottom: 1px solid var(--rule); display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; align-items: start; }
+  .research-area:last-of-type { border-bottom: none; }
+  .area-meta { position: sticky; top: 72px; }
+  .area-number { font-family: 'EB Garamond', serif; font-size: 3rem; font-weight: 400; color: var(--rule); line-height: 1; margin-bottom: 0.75rem; }
+  .area-tag { display: inline-block; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.2rem 0.6rem; background: var(--cream); color: var(--moss); border-radius: 2px; margin-bottom: 1rem; border: 1px solid var(--rule); }
+  .area-title { font-family: 'EB Garamond', serif; font-size: 1.5rem; font-weight: 400; color: var(--forest); line-height: 1.25; }
+  .area-body p { font-size: 0.97rem; color: var(--ink-mid); line-height: 1.8; margin-bottom: 1rem; }
+  .area-body p:last-child { margin-bottom: 0; }
+  .area-image { width: 100%; border-radius: 2px; margin-bottom: 1.5rem; display: block; background: var(--cream); min-height: 160px; object-fit: cover; }
+  .area-image-placeholder { width: 100%; height: 180px; background: linear-gradient(135deg, #c8dcd1 0%, #a4c2ae 100%); border-radius: 2px; margin-bottom: 1.5rem; }
+  .keywords { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1.25rem; }
+  .kw { font-size: 0.75rem; padding: 0.2rem 0.6rem; background: var(--accent-light); color: var(--accent); border-radius: 2px; }
 
-  
-  
-  
-  
-    
-  
-  <meta name="description" content="Assistant Professor, Geography">
+  /* Funded projects */
+  .projects-section { max-width: 960px; margin: 0 auto; padding: 3rem 2rem; border-top: 2px solid var(--forest); }
+  .projects-eyebrow { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--moss); margin-bottom: 0.5rem; }
+  .projects-title { font-family: 'EB Garamond', serif; font-size: 1.9rem; font-weight: 400; color: var(--forest); margin-bottom: 2rem; }
+  .project-grid { display: flex; flex-direction: column; gap: 1.25rem; }
+  .project-card { border: 1px solid var(--rule); border-radius: 2px; padding: 1.5rem; display: grid; grid-template-columns: 80px 1fr; gap: 1.25rem 1.5rem; align-items: start; transition: border-color 0.15s; }
+  .project-card:hover { border-color: var(--sage); }
+  .project-funder { display: flex; flex-direction: column; align-items: center; gap: 0.4rem; flex-shrink: 0; }
+  .funder-badge { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.3rem 0.6rem; border-radius: 2px; white-space: nowrap; text-align: center; }
+  .badge-nasa { background: #e8f0fc; color: #1a4fa0; }
+  .badge-nsf  { background: #e8f7ee; color: var(--forest-mid); }
+  .badge-other{ background: var(--accent-light); color: var(--accent); }
+  .project-year { font-size: 0.75rem; color: var(--ink-light); text-align: center; }
+  .project-title { font-size: 0.97rem; font-weight: 500; color: var(--ink); margin-bottom: 0.35rem; line-height: 1.45; }
+  .project-pi { font-size: 0.82rem; color: var(--ink-light); margin-bottom: 0.5rem; }
+  .project-pi strong { color: var(--ink-mid); font-weight: 500; }
+  .project-desc { font-size: 0.88rem; color: var(--ink-mid); line-height: 1.65; }
+  .project-placeholder { border: 1px dashed var(--rule); border-radius: 2px; padding: 2rem; text-align: center; color: var(--ink-light); font-size: 0.88rem; font-style: italic; }
 
-  
-  <link rel="alternate" hreflang="en-us" href="https://yaqianhe.github.io/">
-
-  
-
-
-  
-
-  
-
-  
-
-  
-  
-  
-  <meta name="theme-color" content="#EF525B">
-  
-
-  
-  
-  
-  
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
-
-    
-    
-    
-    
-      
-      
-        
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" crossorigin="anonymous">
-        
-      
-    
-
-    
-
-    
-
-  
-
-  
-  
-  <link rel="stylesheet" href=//fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono>
-  
-
-  <link rel="stylesheet" href="/styles.css">
-  
-
-  
-  
-    <script>
-      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-      ga('create', 'UA-132320758-1', 'auto');
-      
-      ga('require', 'eventTracker');
-      ga('require', 'outboundLinkTracker');
-      ga('require', 'urlChangeTracker');
-      ga('send', 'pageview');
-    </script>
-    <script async src="//www.google-analytics.com/analytics.js"></script>
-    
-    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
-    
-  
-  
-
-  
-  <link rel="alternate" href="https://yaqianhe.github.io/index.xml" type="application/rss+xml" title="Yaqian He">
-  <link rel="feed" href="https://yaqianhe.github.io/index.xml" type="application/rss+xml" title="Yaqian He">
-  
-
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="icon" type="image/png" href="/img/icon.png">
-  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
-
-  <link rel="canonical" href="https://yaqianhe.github.io/">
-
-  <meta property="twitter:card" content="summary_large_image">
-  
-  <meta property="og:site_name" content="Yaqian He">
-  <meta property="og:url" content="https://yaqianhe.github.io/">
-  <meta property="og:title" content="Yaqian He">
-  <meta property="og:description" content="Assistant Professor, Geography">
-  
-  
-    
-  <meta property="og:image" content="https://yaqianhe.github.io/img/icon-192.png">
-  <meta property="og:locale" content="en-us">
-  
-  
-  
-
-  
-
-  
-
-  <title>Yaqian He</title>
-
+  footer { border-top: 1px solid var(--rule); padding: 2rem; text-align: center; font-size: 0.8rem; color: var(--ink-light); }
+  footer a { color: var(--moss); text-decoration: none; }
+  @media (max-width: 700px) {
+    .research-area { grid-template-columns: 1fr; gap: 1.5rem; padding: 2rem 1.25rem; }
+    .area-meta { position: static; }
+    nav { padding: 0 1rem; }
+    .nav-links a { padding: 0.3rem 0.5rem; font-size: 0.75rem; }
+    .page-header { padding: 2rem 1.25rem 1.5rem; }
+    .projects-section { padding: 2rem 1.25rem; }
+    .project-card { grid-template-columns: 1fr; }
+  }
+</style>
 </head>
-<body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71" >
-
-<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
-  <div class="container justify-content-center">
-
-    
-      <a class="navbar-brand" href="/">Geospatial and Environmental Modeling Group @ IU Bloomington</a>
-      
-      <button type="button" class="navbar-toggler" data-toggle="collapse"
-              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-        <span><i class="fas fa-bars"></i></span>
-      </button>
-      
-
-    
-    <div class="collapse navbar-collapse" id="navbar">
-
-      
-      
-      <ul class="navbar-nav ml-auto">
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link" href="/people" data-target="/people">
-            
-            <span>People</span>
-            
-          </a>
-        </li>
-
-        
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link" href="/research" data-target="/research">
-            
-            <span>Research</span>
-            
-          </a>
-        </li>
-
-        
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link" href="/publications" data-target="/publications">
-            
-            <span>Publications</span>
-            
-          </a>
-        </li>
-
-        
-    
-
-        
-
-           
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link" href="/teaching" data-target="/teaching">
-            
-            <span>Teaching</span>
-            
-          </a>
-        </li>
-
-        
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link" href="/data" data-target="/data">
-            
-            <span>Data</span>
-            
-          </a>
-        </li>
-
-        
-        
-         <li class="nav-item">
-          <a class="nav-link" href="/opportunities" data-target="/opportunities">
-            
-            <span>Opportunities</span>
-            
-          </a>
-        </li>   
-        
-        <!--
-          <li class="nav-item">
-          <a class="nav-link" href="/contact" data-target="/contact">
-            
-            <span>Contact</span>
-            
-          </a>
-        </li>         
-        //-->            
-        
-          
-        
-        
-        
-
-      
-
-        
-
-        
-      </ul>
-
-    </div>
-  </div>
+<body>
+<nav>
+  <a href="/" class="nav-brand">Geospatial & Environmental Modeling Group</a>
+  <ul class="nav-links">
+    <li><a href="/research/" class="active">Research</a></li>
+    <li><a href="/publications/">Publications</a></li>
+    <li><a href="/people/">People</a></li>
+    <li><a href="/teaching/">Teaching</a></li>
+    <li><a href="/data/">Data</a></li>
+    <li><a href="/opportunities/">Opportunities</a></li>
+  </ul>
 </nav>
 
+<header class="page-header">
+  <p class="page-eyebrow">What we study</p>
+  <h1 class="page-title">Research</h1>
+</header>
 
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="universal-wrapper">
-  <h2 id="Current-Research">Current Research</h2>
-
-  
-  <div class="article-style" itemprop="articleBody">
-
-<hr />
-
-<img src="/img/lclu.png" alt="" height="38%" width="38%" style="margin:8px 25px 25px 0px;" ALIGN="left" /> <h2>Land Cover and Land Use Change</h2>
-<p>Land cover and land use change is important for global carbon budget, environmental change assessment, agricultural planning, and convervation measures. We use novel machine learning and deep learning algorithms to imporve the accuracy of LCLU data across globe and subsequently detect its changes. The LCLUC patterns, rates, and transitions identified in our studies would be a valuable source of climate and environmental studies.</p>
-
-<hr />
-
-<img src="/img/Climate.png" alt="" height="38%" width="38%" style="margin:8px 25px 202px 0px;" ALIGN="left" /> <h2>LCLUC-Atmosphere Interaction</h2>
-<p>Climate variability and extremes are a combination of internal variability, GHG emissions, and other forcings, like land cover and land use change (LCLUC). However, how comparable the different forcings is not yet sufficiently understood and quantified. The lack of process understanding and reliable quantification of impacts can be attributed to uncertainties in LCLUC information used in current LCLUC-Atmosphere interactions studies. We take the advantage of LCLUC derived from remotely-sensed data and use robust statistical methods and climate models to attribute the causes of climate variability and extremes.</p>
-
-<hr />
-
-<img src="/img/AgriAid2.png" alt="" height="38%" width="38%" style="margin:8px 25px 25px 0px;" ALIGN="left" /> <h2>Agricultural Sustainability</h2>
-<p>The United Nations has set up Sustainable Development Goals (SDGs) to address the necessity of reducing poverty, advancing social equity, and simultaneously ensuring environmental protection. Precision Agriculture provides an promising way to achieve the UN millennium goals. We utilize multi-source satellite and UAV imagery to identify cropland dynamics, crop diseases, crop health and its phenology, soil moisture conditions, irrigation-climate interaction, effectiveness of agriculture aid and so on.</p>
-
-<hr />
-
-<img src="/img/GIS.jpg" alt="" height="38%" width="38%" style="margin:0px 25px 58px 0px;" ALIGN="left" /> <h2>Air Quality and Human Health</h2>
-<p>Humanity's health is vulnerable to environment changes (e.g., air quality). The pandemic of Covid-19 produces numbers of tragedies in the society. We use geospatial knowledge to reveal natural and socioeconomic drivers of various diseases to predict disease risk areas and improve the prevention implementation. We also use satellite-derived air quality data to explore the relationships between air quaility and human health.</p>
-
-<hr />
-</div>
-  
-
-  
-  
-
-  
-
-</div>
-<div class="container">
-  <footer class="site-footer">
-  
-
-  <p class="powered-by">
-    Yaqian He &middot; 
-    (made with <a href="https://georgecushen.com/create-your-website-with-hugo/" target="_blank">hugo academic</a>)
-
-  </p>
-</footer>
-
-
-</div>
-
-
-<div id="modal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Cite</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <pre><code class="tex hljs"></code></pre>
-      </div>
-      <div class="modal-footer">
-        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
-          <i class="fas fa-copy"></i> Copy
-        </a>
-        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
-          <i class="fas fa-download"></i> Download
-        </a>
-        <div id="modal-error"></div>
-      </div>
+<article class="research-area">
+  <div class="area-meta">
+    <div class="area-number">01</div>
+    <span class="area-tag">Remote Sensing · ML</span>
+    <h2 class="area-title">Land Cover & Land Use Change</h2>
+  </div>
+  <div class="area-body">
+    <img src="img/lclu.png" alt="Land cover and land use change" class="area-image" onerror="this.style.display='none'">
+    <p>Land cover and land use change is central to global carbon budgets, environmental change assessment, agricultural planning, and conservation measures. We use novel machine learning and deep learning algorithms to improve the accuracy of LCLU data across the globe and subsequently detect its changes over time.</p>
+    <p>The LCLUC patterns, rates, and transitions identified in our studies provide a valuable resource for downstream climate and environmental research — from quantifying carbon emissions to evaluating policy effectiveness.</p>
+    <div class="keywords">
+      <span class="kw">Deep Learning</span>
+      <span class="kw">AVHRR NDVI</span>
+      <span class="kw">Landsat</span>
+      <span class="kw">Global Mapping</span>
+      <span class="kw">Change Detection</span>
     </div>
   </div>
-</div>
+</article>
 
+<article class="research-area">
+  <div class="area-meta">
+    <div class="area-number">02</div>
+    <span class="area-tag">Climate · Land</span>
+    <h2 class="area-title">LCLUC–Atmosphere Interaction</h2>
+  </div>
+  <div class="area-body">
+    <img src="img/Climate.png" alt="Climate and land interaction" class="area-image" onerror="this.style.display='none'">
+    <p>Climate variability and extremes result from a combination of internal variability, greenhouse gas emissions, and other forcings — including land cover and land use change. However, how these different forcings compare in magnitude is not yet sufficiently understood or quantified.</p>
+    <p>We leverage LCLUC datasets derived from remotely-sensed data and apply robust statistical methods and climate models to attribute the causes of climate variability and extremes, with a focus on temperature and precipitation extremes across regional to continental scales.</p>
+    <div class="keywords">
+      <span class="kw">Climate Extremes</span>
+      <span class="kw">Earth System Models</span>
+      <span class="kw">Attribution</span>
+      <span class="kw">ABoVE Domain</span>
+      <span class="kw">Biogeophysics</span>
+    </div>
+  </div>
+</article>
 
-    
+<article class="research-area">
+  <div class="area-meta">
+    <div class="area-number">03</div>
+    <span class="area-tag">Agriculture · Food</span>
+    <h2 class="area-title">Agricultural Sustainability</h2>
+  </div>
+  <div class="area-body">
+    <img src="img/AgriAid2.png" alt="Agricultural sustainability" class="area-image" onerror="this.style.display='none'">
+    <p>The United Nations Sustainable Development Goals highlight the necessity of reducing poverty, advancing social equity, and ensuring environmental protection simultaneously. Precision agriculture offers a promising pathway toward these goals.</p>
+    <p>We utilize multi-source satellite and UAV imagery to identify cropland dynamics, crop diseases, crop health and phenology, soil moisture, and the effectiveness of irrigation and agricultural aid. Our work spans from the Arkansas Delta to sub-Saharan Africa.</p>
+    <div class="keywords">
+      <span class="kw">Crop Phenology</span>
+      <span class="kw">Irrigation</span>
+      <span class="kw">UAV Imagery</span>
+      <span class="kw">Soybean Mapping</span>
+      <span class="kw">Food Security</span>
+    </div>
+  </div>
+</article>
 
-    
-    
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        CommonHTML: { linebreaks: { automatic: true } },
-        tex2jax: { inlineMath: [ ['$', '$'], ['\\(','\\)'] ], displayMath: [ ['$$','$$'], ['\\[', '\\]'] ], processEscapes: false },
-        TeX: { noUndefined: { attributes: { mathcolor: 'red', mathbackground: '#FFEEEE', mathsize: '90%' } } },
-        messageStyle: 'none'
-      });
-    </script>
-    
+<article class="research-area">
+  <div class="area-meta">
+    <div class="area-number">04</div>
+    <span class="area-tag">Health · GIS</span>
+    <h2 class="area-title">Air Quality & Human Health</h2>
+  </div>
+  <div class="area-body">
+    <img src="img/GIS.jpg" alt="Air quality and human health" class="area-image" onerror="this.style.display='none'">
+    <p>Human health is deeply vulnerable to environmental change, including degraded air quality and emerging infectious diseases. We use geospatial methods to reveal natural and socioeconomic drivers of various diseases to predict disease risk areas and improve prevention efforts.</p>
+    <p>We also use satellite-derived air quality data — including ammonia, aerosol optical depth, and fine particulate matter — to explore relationships between environmental conditions and public health outcomes across spatial scales.</p>
+    <div class="keywords">
+      <span class="kw">Ammonia</span>
+      <span class="kw">Aerosol Optical Depth</span>
+      <span class="kw">COVID-19</span>
+      <span class="kw">Spatial Epidemiology</span>
+      <span class="kw">Health Equity</span>
+    </div>
+  </div>
+</article>
 
-    
-    
-    
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha512-+NqPlbbtM1QqiK8ZAo4Yrj2c4lNQoGv8P79DPtKzj++l5jnN39rHA/xsqn8zE9l0uSoxaCdrOgFs6yjyfbBxSg==" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha256-VsEqElsCHSGmnmHXGQzvoWjWwoznFSZc6hs7ARLRacQ=" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+<!-- FUNDED PROJECTS -->
+<section class="projects-section">
+  <p class="projects-eyebrow">External funding</p>
+  <h2 class="projects-title">Funded Projects</h2>
+  <div class="project-grid">
 
-      
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
-        
-      
+    <div class="project-card">
+      <div class="project-funder">
+        <span class="funder-badge badge-nasa">NASA</span>
+        <span class="project-year">2023–</span>
+      </div>
+      <div>
+        <p class="project-title">Quantifying Effects of Land Cover Change–Climate Interactions on Ecosystem Productivity in Northwestern US</p>
+        <p class="project-pi"><strong>PI:</strong> Yaqian He &nbsp;·&nbsp; <strong>Co-PI:</strong> Di Yang &nbsp;·&nbsp; NASA EPSCoR R3</p>
+        <p class="project-desc">This project investigates how land cover and land use change interacts with climate variability to drive shifts in ecosystem productivity across the Arctic-Boreal domain, combining satellite-derived LCLUC data with Earth system model simulations.</p>
+      </div>
+    </div>
 
-      
-      
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML-full" integrity="sha256-GhM+5JHb6QUzOQPXSJLEWP7R73CbkisjzK5Eyij4U9w=" crossorigin="anonymous" async></script>
-      
-    
+    <div class="project-card">
+      <div class="project-funder">
+        <span class="funder-badge badge-nasa">NASA</span>
+        <span class="project-year">2022–</span>
+      </div>
+      <div>
+        <p class="project-title">Near Real-Time Prediction of Climate Extremes Using Machine Learning</p>
+        <p class="project-pi"><strong>PI:</strong> Miaoqing Huang &nbsp;·&nbsp; <strong>Co-PIs:</strong> Yaqian He, Xiao Liu &nbsp;·&nbsp; NASA EPSCoR RID</p>
+        <p class="project-desc">Develops machine learning algorithms capable of predicting climate extremes — including temperature and precipitation events — in near real-time over Arkansas and surrounding regions.</p>
+      </div>
+    </div>
 
-    <script src="/js/hugo-academic.js"></script>
-    
+    <div class="project-card">
+      <div class="project-funder">
+        <span class="funder-badge badge-nasa">NASA</span>
+        <span class="project-year">2022–</span>
+      </div>
+      <div>
+        <p class="project-title">Spatiotemporal Patterns of Soybean Phenology in the Northern Arkansas Delta Region</p>
+        <p class="project-pi"><strong>PI:</strong> Yaqian He &nbsp;·&nbsp; <strong>Co-PI:</strong> Brooks Pearson &nbsp;·&nbsp; NASA Arkansas Space Consortium</p>
+        <p class="project-desc">Uses multi-source satellite imagery to characterize field-scale soybean phenology patterns across the Arkansas Delta, informing precision agriculture and irrigation management decisions.</p>
+      </div>
+    </div>
 
-    
-    
+    <div class="project-card">
+      <div class="project-funder">
+        <span class="funder-badge badge-nasa">NASA</span>
+        <span class="project-year">2021–</span>
+      </div>
+      <div>
+        <p class="project-title">Landscape-Scale Restoration of Fire-Adapted Vegetation in the Ouachita Mountains</p>
+        <p class="project-pi"><strong>PI:</strong> William Flatley &nbsp;·&nbsp; <strong>Co-PI:</strong> Yaqian He &nbsp;·&nbsp; NASA Arkansas Space Consortium</p>
+        <p class="project-desc">Guides restoration planning using remote sensing to track fire-adapted vegetation recovery across the Ouachita Mountain landscape in Arkansas.</p>
+      </div>
+    </div>
 
-    
-    
-    
+    <div class="project-card">
+      <div class="project-funder">
+        <span class="funder-badge badge-nasa">NASA</span>
+        <span class="project-year">2021–</span>
+      </div>
+      <div>
+        <p class="project-title">Quantifying Irrigation Impacts on Crop Yield in the Arkansas Delta</p>
+        <p class="project-pi"><strong>PI:</strong> Yaqian He &nbsp;·&nbsp; <strong>Co-PIs:</strong> Matthew Connolly, Xiao Huang &nbsp;·&nbsp; NASA EPSCoR RID</p>
+        <p class="project-desc">Combines satellite-derived soil moisture, crop phenology, and climate data to quantify how irrigation practices influence soybean and rice yields in the Arkansas Delta from 2003 to 2017.</p>
+      </div>
+    </div>
 
-    
-    
-    <script>hljs.initHighlightingOnLoad();</script>
-    
+    <div class="project-card">
+      <div class="project-funder">
+        <span class="funder-badge badge-other">Dartmouth</span>
+        <span class="project-year">2020–</span>
+      </div>
+      <div>
+        <p class="project-title">Adaptation Feedbacks to Present and Future Climate Extremes</p>
+        <p class="project-pi"><strong>PI:</strong> Justin Mankin &nbsp;·&nbsp; <strong>Co-PIs:</strong> Yaqian He, Ethan Coffel &nbsp;·&nbsp; Dartmouth Neukom Institute CompX Grant</p>
+        <p class="project-desc">Assesses how human and ecological adaptation feedbacks modulate the impacts of present and projected future climate extremes across the United States.</p>
+      </div>
+    </div>
 
-    
-    
-    <script>
-      const search_index_filename = "/index.json";
-      const i18n = {
-        'placeholder': "Search...",
-        'results': "Search Results",
-        'no_results': "No results found"
-      };
-      const content_type = {
-        'post': "Posts",
-        'project': "Projects",
-        'publication' : "Publications",
-        'talk' : "Talks"
-        };
-    </script>
-    
+    <!-- Placeholder for new projects -->
+    <div class="project-placeholder">
+      New funded projects will be listed here.
+    </div>
 
-    
-    
+  </div>
+</section>
 
-    
-
-    
-    
-
-    
-    
-
-  </body>
+<footer>
+  <p>© Yaqian He · Geospatial and Environmental Modeling Group · Indiana University Bloomington</p>
+  <p style="margin-top:0.4rem"><a href="/">← Back to home</a></p>
+</footer>
+</body>
 </html>
-
-
-
