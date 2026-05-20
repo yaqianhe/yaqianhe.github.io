@@ -20,17 +20,15 @@
   .nav-links { display: flex; list-style: none; }
   .nav-links a { display: block; padding: 0.35rem 0.85rem; font-size: 0.82rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink-mid); text-decoration: none; border-radius: 4px; transition: color 0.15s, background 0.15s; }
   .nav-links a:hover, .nav-links a.active { color: var(--forest); background: var(--accent-light); }
-
   .page-header { max-width: 960px; margin: 0 auto; padding: 3.5rem 2rem 2.5rem; border-bottom: 1px solid var(--rule); display: flex; align-items: flex-end; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
   .page-eyebrow { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--moss); margin-bottom: 0.5rem; }
   .page-title { font-family: 'EB Garamond', serif; font-size: 2.6rem; font-weight: 400; color: var(--forest); }
-  .pub-count { font-size: 0.85rem; color: var(--ink-light); white-space: nowrap; }
   .pub-count strong { color: var(--forest); font-size: 1.4rem; font-family: 'EB Garamond', serif; display: block; }
-
+  .pub-count { font-size: 0.85rem; color: var(--ink-light); white-space: nowrap; }
   .section { max-width: 960px; margin: 0 auto; padding: 2.5rem 2rem; }
   .section + .section { border-top: 1px solid var(--rule); }
   .section-title { font-family: 'EB Garamond', serif; font-size: 1.4rem; font-weight: 400; color: var(--forest); margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--rule); }
-
+  .note-student { font-size: 0.78rem; color: var(--ink-light); font-style: italic; margin-bottom: 1rem; }
   .pub-list { list-style: none; }
   .pub-item { display: grid; grid-template-columns: 40px 1fr; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--rule); align-items: baseline; }
   .pub-item:last-child { border-bottom: none; }
@@ -43,8 +41,8 @@
   .pub-tag { display: inline-block; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.1rem 0.45rem; border-radius: 2px; margin-left: 0.4rem; vertical-align: middle; }
   .tag-book { background: var(--accent-light); color: var(--accent); }
   .tag-chapter { background: #e8edf7; color: #3a538a; }
-  .note-student { font-size: 0.72rem; color: var(--ink-light); font-style: italic; margin-bottom: 0.75rem; }
-
+  /* student name underline */
+  .student { text-decoration: underline; text-underline-offset: 2px; }
   footer { border-top: 1px solid var(--rule); padding: 2rem; text-align: center; font-size: 0.8rem; color: var(--ink-light); }
   footer a { color: var(--moss); text-decoration: none; }
   @media (max-width: 700px) {
@@ -82,8 +80,8 @@
 <!-- SUBMITTED / IN REVISION -->
 <section class="section">
   <h2 class="section-title">Submitted or In Revision</h2>
-  <p class="note-student"><u>student advised</u></p>
-  <ol class="pub-list" reversed style="list-style:none">
+  <p class="note-student">Underline indicates advised student co-author.</p>
+  <ul class="pub-list">
     <li class="pub-item">
       <span class="pub-num">5</span>
       <p class="pub-body">Pavlovic, N., Malings, C., Huang, M., <strong>He, Y.</strong>, et al. Satellite-derived air quality data can effectively support health needs when use cases, earth observing capabilities, and capacities align. <em>Under review.</em></p>
@@ -102,9 +100,9 @@
     </li>
     <li class="pub-item">
       <span class="pub-num">1</span>
-      <p class="pub-body"><strong>He, Y.</strong>, Yang, D., <u>Li, S.</u>, Cheng, L., and Fang, F. Enhanced extreme precipitation simulation in China using NCAR CESM based on a realistic remotely-sensed time series of annual land cover and land use data from 1982 to 2013. <em>Under review.</em></p>
+      <p class="pub-body"><strong>He, Y.</strong>, Yang, D., <span class="student">Li, S.</span>, Cheng, L., and Fang, F. Enhanced extreme precipitation simulation in China using NCAR CESM based on a realistic remotely-sensed time series of annual land cover and land use data from 1982 to 2013. <em>Under review.</em></p>
     </li>
-  </ol>
+  </ul>
 </section>
 
 <!-- PEER-REVIEWED -->
@@ -121,7 +119,7 @@
     </li>
     <li class="pub-item">
       <span class="pub-num">49</span>
-      <p class="pub-body"><u>Li, S.</u>, Yang, D.*, <strong>He, Y.*</strong>, Li, Y., and Liu, W. 2026. The impact of land cover change–climate interactions on ecosystem productivity in the Arctic-Boreal region. <em>Agricultural and Forest Meteorology,</em> 383, 111137.<br><a href="https://doi.org/10.1016/j.agrformet.2026.111137" class="pub-link" target="_blank" rel="noopener">View →</a></p>
+      <p class="pub-body"><span class="student">Li, S.</span>, Yang, D.*, <strong>He, Y.*</strong>, Li, Y., and Liu, W. 2026. The impact of land cover change–climate interactions on ecosystem productivity in the Arctic-Boreal region. <em>Agricultural and Forest Meteorology,</em> 383, 111137.<br><a href="https://doi.org/10.1016/j.agrformet.2026.111137" class="pub-link" target="_blank" rel="noopener">View →</a></p>
     </li>
     <li class="pub-item">
       <span class="pub-num">48</span>
@@ -129,7 +127,7 @@
     </li>
     <li class="pub-item">
       <span class="pub-num">47</span>
-      <p class="pub-body"><u>Li, S.</u>, <strong>He, Y.*</strong>, Yang, D.*, Li, Y., and Liu, W. 2026. Incorporating learned geospatial embeddings to deep image prior for inpainting cloud areas in remotely sensed images. <em>Science of Remote Sensing,</em> 13, 100404.<br><a href="https://www.sciencedirect.com/science/article/pii/S2666017226000428" class="pub-link" target="_blank" rel="noopener">View →</a></p>
+      <p class="pub-body"><span class="student">Li, S.</span>, <strong>He, Y.*</strong>, Yang, D.*, Li, Y., and Liu, W. 2026. Incorporating learned geospatial embeddings to deep image prior for inpainting cloud areas in remotely sensed images. <em>Science of Remote Sensing,</em> 13, 100404.<br><a href="https://www.sciencedirect.com/science/article/pii/S2666017226000428" class="pub-link" target="_blank" rel="noopener">View →</a></p>
     </li>
     <li class="pub-item">
       <span class="pub-num">46</span>
@@ -137,7 +135,7 @@
     </li>
     <li class="pub-item">
       <span class="pub-num">45</span>
-      <p class="pub-body"><u>Faith, V.</u>, <strong>He, Y.</strong>, Pearson, B., et al. 2025. Characterizing spatiotemporal patterns of field-scale soybean phenology in the Arkansas Delta region using multi-source remote sensing data from 2002 to 2020. <em>Papers in Applied Geography,</em> 1–16.<br><a href="https://www.tandfonline.com/doi/abs/10.1080/23754931.2025.2586545" class="pub-link" target="_blank" rel="noopener">View →</a></p>
+      <p class="pub-body"><span class="student">Faith, V.</span>, <strong>He, Y.</strong>, Pearson, B., et al. 2025. Characterizing spatiotemporal patterns of field-scale soybean phenology in the Arkansas Delta region using multi-source remote sensing data from 2002 to 2020. <em>Papers in Applied Geography,</em> 1–16.<br><a href="https://www.tandfonline.com/doi/abs/10.1080/23754931.2025.2586545" class="pub-link" target="_blank" rel="noopener">View →</a></p>
     </li>
     <li class="pub-item">
       <span class="pub-num">44</span>
@@ -145,7 +143,7 @@
     </li>
     <li class="pub-item">
       <span class="pub-num">43</span>
-      <p class="pub-body"><u>Li, S.</u>, Yang, D.*, <strong>He, Y.*</strong>, Parazoo, N., and Liu, W. 2025. The Biogeophysical Impacts of Land Cover Change on Climate Extremes in the Arctic and Boreal Regions. <em>Environmental Research Letters,</em> 20, 084057.<br><a href="https://iopscience.iop.org/article/10.1088/1748-9326/adeba0" class="pub-link" target="_blank" rel="noopener">View →</a></p>
+      <p class="pub-body"><span class="student">Li, S.</span>, Yang, D.*, <strong>He, Y.*</strong>, Parazoo, N., and Liu, W. 2025. The Biogeophysical Impacts of Land Cover Change on Climate Extremes in the Arctic and Boreal Regions. <em>Environmental Research Letters,</em> 20, 084057.<br><a href="https://iopscience.iop.org/article/10.1088/1748-9326/adeba0" class="pub-link" target="_blank" rel="noopener">View →</a></p>
     </li>
     <li class="pub-item">
       <span class="pub-num">42</span>
@@ -169,7 +167,7 @@
     </li>
     <li class="pub-item">
       <span class="pub-num">37</span>
-      <p class="pub-body"><strong>He, Y.</strong>, Connolly, M. H., Xu, R., Huang, X., Wang, Z., <u>Filares-Arreguin, M.</u>, and <u>Rhodes, C.</u> 2023. Impacts of irrigation–climate interactions on irrigated soybean yields in the US Arkansas Delta from 2003 to 2017. <em>Progress in Physical Geography,</em> 0(0).<br><a href="https://journals.sagepub.com/doi/10.1177/03091333231169443" class="pub-link" target="_blank" rel="noopener">View →</a></p>
+      <p class="pub-body"><strong>He, Y.</strong>, Connolly, M. H., Xu, R., Huang, X., Wang, Z., <span class="student">Filares-Arreguin, M.</span>, and <span class="student">Rhodes, C.</span> 2023. Impacts of irrigation–climate interactions on irrigated soybean yields in the US Arkansas Delta from 2003 to 2017. <em>Progress in Physical Geography,</em> 0(0).<br><a href="https://journals.sagepub.com/doi/10.1177/03091333231169443" class="pub-link" target="_blank" rel="noopener">View →</a></p>
     </li>
     <li class="pub-item">
       <span class="pub-num">36</span>
@@ -181,7 +179,7 @@
     </li>
     <li class="pub-item">
       <span class="pub-num">34</span>
-      <p class="pub-body"><u>Tay, W.</u>, and <strong>He, Y.</strong> 2023. Detecting land cover and land use change and its impact on biomass carbon emission from 2001 to 2019 in Arkansas. <em>Biogeochemistry,</em> 1–14.<br><a href="https://link.springer.com/article/10.1007/s10533-023-01042-x" class="pub-link" target="_blank" rel="noopener">View →</a></p>
+      <p class="pub-body"><span class="student">Tay, W.</span>, and <strong>He, Y.</strong> 2023. Detecting land cover and land use change and its impact on biomass carbon emission from 2001 to 2019 in Arkansas. <em>Biogeochemistry,</em> 1–14.<br><a href="https://link.springer.com/article/10.1007/s10533-023-01042-x" class="pub-link" target="_blank" rel="noopener">View →</a></p>
     </li>
     <li class="pub-item">
       <span class="pub-num">33</span>
@@ -189,7 +187,7 @@
     </li>
     <li class="pub-item">
       <span class="pub-num">32</span>
-      <p class="pub-body"><strong>He, Y.</strong>, <u>Siminara, P.</u>, Huang, X., Yang, D., Fang, F., and Song, C. 2023. Geospatial Modeling of Health, Socioeconomic, Demographic, and Environmental Factors with COVID-19 Incidence Rate in Arkansas. <em>ISPRS Int. J. Geo-Inf,</em> 12(2), 45.<br><a href="https://www.mdpi.com/2220-9964/12/2/45" class="pub-link" target="_blank" rel="noopener">View →</a></p>
+      <p class="pub-body"><strong>He, Y.</strong>, <span class="student">Siminara, P.</span>, Huang, X., Yang, D., Fang, F., and Song, C. 2023. Geospatial Modeling of Health, Socioeconomic, Demographic, and Environmental Factors with COVID-19 Incidence Rate in Arkansas. <em>ISPRS Int. J. Geo-Inf,</em> 12(2), 45.<br><a href="https://www.mdpi.com/2220-9964/12/2/45" class="pub-link" target="_blank" rel="noopener">View →</a></p>
     </li>
     <li class="pub-item">
       <span class="pub-num">31</span>
@@ -225,7 +223,7 @@
     </li>
     <li class="pub-item">
       <span class="pub-num">23</span>
-      <p class="pub-body">Liu, J., Shen, W., and <strong>He, Y.*</strong> 2021. Effects of cropland expansion on temperature extremes in western India from 1982 to 2015. <em>Land,</em> 10, 489.<br><a href="https://doi.org/10.3390/land10050489" class="pub-link" target="_blank" rel="noopener">View →</a></p>
+      <p class="pub-body"><span class="student">Liu, J.</span>, Shen, W., and <strong>He, Y.*</strong> 2021. Effects of cropland expansion on temperature extremes in western India from 1982 to 2015. <em>Land,</em> 10, 489.<br><a href="https://doi.org/10.3390/land10050489" class="pub-link" target="_blank" rel="noopener">View →</a></p>
     </li>
     <li class="pub-item">
       <span class="pub-num">22</span>
